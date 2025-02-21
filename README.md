@@ -13,7 +13,7 @@ Pokud již máte projekt uložený na ploše, nemusíte ho klonovat. Klonování
 ### Klonování repozitáře
 
 ```sh
-git clone https://github.com/ZuzanaMogyorosi/webKUprave.git
+git clone https://github.com/ZuzanaMogyorosi/TOTOFUNGUJE.git
 cd webKUprave
 ```
 
