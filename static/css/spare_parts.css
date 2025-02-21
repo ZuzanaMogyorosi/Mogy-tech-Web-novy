@@ -1,0 +1,11 @@
+.section-spare-parts {
+	width: 70%;
+	margin: 0 auto;
+}
+.spare-parts-wrapper {
+	padding-top: 70px;
+	padding-bottom: 70px;
+}
+.swiper-slide img {
+	width: 100%;
+}

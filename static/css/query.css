@@ -1,0 +1,318 @@
+/* ==================================================================================
+    HEADER 
+   ================================================================================== */
+
+@media (max-width: 1200px) {
+	.header-text {
+		display: none;
+	}
+}
+
+@media (max-width: 1020px) {
+	.navbar {
+		padding: 0 5rem;
+		width: 100%;
+	}
+	.triangle {
+		right: 510px;
+	}
+}
+
+@media (max-width: 850px) {
+	.navbar .links {
+		display: none;
+	}
+	.navbar .toggle-btn {
+		display: block;
+	}
+	.dropdown-menu {
+		display: block;
+	}
+	.triangle {
+		display: none;
+	}
+}
+
+@media (max-width: 576px) {
+	.dropdown-menu {
+		width: unset;
+		left: 2rem;
+	}
+}
+@media (max-width: 599px) {
+	.navbar {
+		padding: 3rem 3rem;
+		width: 100%;
+	}
+}
+
+/* ==================================================================================
+    HEADER BETWEEN 
+   ================================================================================== */
+
+/* HEADER BETWEEN - max-width: 1200px */
+
+@media (max-width: 1200px) {
+	.header-between {
+		display: none;
+	}
+	.section-about-us {
+		padding-top: 70px;
+	}
+}
+
+/* ==================================================================================
+    MONTHLY PROMO 
+   ================================================================================== */
+
+/* MONTHLY PROMO - max-width: 1200px a max-width: 800px */
+@media (max-width: 1200px) {
+	.monthly-promo {
+		padding: 3rem 10rem;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+@media (max-width: 1020px) {
+	.monthly-promo {
+		padding: 3rem 5rem;
+		width: 100%;
+	}
+}
+
+@media (max-width: 850px) {
+	.monthly-promo-images {
+		display: none;
+	}
+	.monthly-content {
+		flex-basis: 100%;
+	}
+}
+@media (max-width: 599px) {
+	.monthly-promo {
+		padding: 3rem 3rem;
+		width: 100%;
+	}
+}
+
+/* ==================================================================================
+    ABOUT-US 
+   ================================================================================== */
+
+/* ABOUT-US - max-width: 599px */
+@media (max-width: 1200px) {
+	.about-us-wrapper {
+		padding: 0 10rem;
+		width: 100%;
+	}
+}
+
+@media (max-width: 1020px) {
+	.about-us-wrapper {
+		padding: 0 5rem;
+		width: 100%;
+	}
+}
+
+@media (max-width: 700px) {
+	.icon-container {
+		display: flex;
+		flex-direction: column;
+	}
+	.icon-wrapper {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	.icon-text {
+		padding-bottom: 25px;
+		padding-top: 10px;
+	}
+	.about-us-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+/* ==================================================================================
+    PROMO SECTION 
+   ================================================================================== */
+
+/* PROMO SECTION - max-width: 599px */
+
+@media (max-width: 900px) {
+	.promo-wrapper {
+		padding: 0 5rem;
+		width: 100%;
+		display: flex;
+		gap: 15px;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+	}
+	.promo-card {
+		height: 100px;
+		width: 250px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 8px;
+		position: relative;
+	}
+}
+@media (max-width: 599px) {
+	.promo-wrapper {
+		padding: 0 2rem;
+		width: 100%;
+		display: flex;
+		gap: 15px;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+	}
+	.promo-card {
+		height: 100px;
+		width: 250px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 8px;
+		position: relative;
+	}
+}
+/* ==================================================================================
+    PROMO SECTION + SERVICES-HTML
+   ================================================================================== */
+
+/* PROMO SECTION SERVICES-HTML - max-width: 720px */
+
+@media (max-width: 720px) {
+	.section-services {
+		margin: 0 auto;
+		width: 100%;
+		padding: 0 3rem;
+	}
+	#car-service.service-wrapper,
+	#tire-service.service-wrapper,
+	#car-electricity-service.service-wrapper,
+	#air-conditioner-service.service-wrapper,
+	#technical-control-service.service-wrapper,
+	#spare-parts.service-wrapper,
+	#clean-car.service-wrapper,
+	#wrecked-vehicle.service-wrapper,
+	#welding.service-wrapper {
+		flex-wrap: wrap;
+		justify-content: center;
+		margin-bottom: 30px;
+		gap: 15px;
+	}
+
+	#car-electricity-service .service-photo {
+		background-position: 50% 25%;
+	}
+
+	#technical-control-service .service-photo {
+		background-position: 50% 0%;
+	}
+
+	#welding .service-photo {
+		background-position: 50% 70%;
+	}
+
+	.service-header {
+		justify-content: center;
+	}
+
+	.service-content {
+		text-align: center;
+	}
+
+	#car-service .service-photo,
+	#tire-service .service-photo,
+	#car-electricity-service .service-photo,
+	#air-conditioner-service .service-photo,
+	#technical-control-service .service-photo,
+	#spare-parts .service-photo,
+	#clean-car .service-photo,
+	#wrecked-vehicle .service-photo,
+	#welding .service-photo {
+		height: 150px;
+		flex-basis: 100%;
+	}
+}
+
+/* ==================================================================================
+    CONTACT SECTION 
+   ================================================================================== */
+
+/* CONTACT SECTION - max-width: 599px */
+
+@media (max-width: 599px) {
+	.contact-wrapper {
+		padding: 0 2rem;
+		width: 100%;
+	}
+
+	.contact-text {
+		flex-basis: 100%;
+		align-items: center;
+	}
+
+	.contact-logo-wrapper {
+		justify-content: center;
+	}
+}
+
+/* CONTACT SECTION MAP - max-width: 759px */
+
+@media (max-width: 1040px) {
+	.contact-wrapper {
+		padding: 0 5rem;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+	.contact-logo-wrapper {
+		justify-content: center;
+	}
+	.contact-text {
+		align-items: center;
+	}
+}
+
+/* ==================================================================================
+    PRICE LIST.HTML 
+   ================================================================================== */
+
+/* PRICE LIST.HTML - max-width: 599px */
+
+@media (max-width: 599px) {
+	.table-wrapper {
+		padding: 0 3rem;
+		width: 100%;
+	}
+}
+
+/* ==================================================================================
+    FOOTER
+   ================================================================================== */
+
+/* FOOTER - max-width: 900px */
+
+@media (max-width: 900px) {
+	.footer-container {
+		flex-direction: column;
+	}
+}
+
+/* ==================================================================================
+    TOP CIRCLE 
+   ================================================================================== */
+
+/*  TOP CIRCLE - max-width: 400px */
+
+@media (max-width: 400px) {
+	.top-circle {
+		bottom: 20px;
+		right: 60px;
+	}
+}

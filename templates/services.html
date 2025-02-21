@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google Consent Mode - výchozí nastavení souhlasu -->
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("consent", "default", {
+				ad_storage: "denied",
+				analytics_storage: "denied",
+				personalization_storage: "denied",
+				functionality_storage: "denied",
+				security_storage: "granted",
+			});
+		</script>
+
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=AW-800058602"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+
+			gtag("config", "AW-800058602");
+		</script>
+
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					"gtm.start": new Date().getTime(),
+					event: "gtm.js",
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NC4WFDCG");
+		</script>
+		<!-- End Google Tag Manager -->
+		<!-- Cookiebot -->
+		<script
+			id="Cookiebot"
+			src="https://consent.cookiebot.com/uc.js"
+			data-cbid="47dc4e8d-7e6e-44ab-8503-723173dbd5ba"
+			data-blockingmode="auto"
+			type="text/javascript"
+		></script>
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/static/image/motor.png" type="image/png" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/style.css') }}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/query.css') }}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/services.css') }}"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/00ce6104a5.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Autoservis-Mogy-tech-služby</title>
+	</head>
+	<body data-theme="default">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NC4WFDCG"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<header id="top">
+			<div class="header-image">
+				<div class="navbar">
+					<div class="logo-white">
+						<a href="/"
+							><img
+								src="/static/image/Logo/logo-bile-dlouhe-mogy.png"
+						/></a>
+					</div>
+					<ul class="links">
+						<li><a href="/#section-one">O Nás</a></li>
+						<li><a href="/nase-sluzby">Naše služby</a></li>
+						<li><a href="/cenik">Ceník</a></li>
+						<li><a href="/nahradni-dily">Náhradní díly</a></li>
+						<li><a href="/#section-four">Kontakt</a></li>
+					</ul>
+					<div class="toggle-btn">
+						<i class="fa-solid fa-bars"></i>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown-menu">
+				<li><a href="/#section-one">O Nás</a></li>
+				<li><a href="/nase-sluzby">Naše služby</a></li>
+				<li><a href="/cenik">Ceník</a></li>
+				<li><a href="/nahradni-dily">Náhradní díly</a></li>
+				<li><a href="/#section-four">Kontakt</a></li>
+			</div>
+		</header>
+		<!-- MAIN -------------------------------------------------->
+		<main>
+			<div class="section-services">
+				<div id="car-service" class="service-wrapper fade-in">
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Autoservis</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>Generální opravy motorů</li>
+							<li>Opravy motorových hlav</li>
+							<li>Výměna rozvodového řemene/řetězu</li>
+							<li>Výměna brzdových destiček/kotoučů</li>
+							<li>Výměny podvozkových dílů</li>
+							<li>
+								Výměny olejů a filtrů motoru, diferenciálů i
+								převodovkách
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="tire-service" class="service-wrapper fade-in">
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Pneuservis</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>Kompletní přezutí pneumatik včetně vyvážení</li>
+							<li>Uskladnění pneumatik na sezónu</li>
+							<li>Opravy defektů</li>
+						</ul>
+					</div>
+				</div>
+				<div
+					id="car-electricity-service"
+					class="service-wrapper fade-in"
+				>
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Automobilové elektronické systémy</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>
+								Autodiagnostika - identifikace závad vozidla
+								pomocí softwaru
+							</li>
+							<li>Opravy kabelových svazků</li>
+							<li>Doplnění elektronické výbavy</li>
+							<li>Výměna autobaterií</li>
+						</ul>
+					</div>
+				</div>
+				<div
+					id="air-conditioner-service"
+					class="service-wrapper fade-in"
+				>
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Servis klimatizací</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>
+								Servis, kontrola a doplnění chladiva do
+								klimatizace
+							</li>
+							<li>Opravy systému klimatizace</li>
+							<li>
+								Doplnění chladiva pro starší i novější typy vozů
+							</li>
+							<li>Čištění systému klimatizace ozonem</li>
+						</ul>
+					</div>
+				</div>
+				<div
+					id="technical-control-service"
+					class="service-wrapper fade-in"
+				>
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Kontrola STK a EMISE</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>Diagnostika elektronických systémů</li>
+							<li>
+								Důkladná kontrola všech klíčových komponent před
+								STK
+							</li>
+							<li>Provedení STK a EMISÍ</li>
+						</ul>
+					</div>
+				</div>
+				<div id="spare-parts" class="service-wrapper fade-in">
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Náhradní a vrakové díly</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>
+								Disponujeme skladem s vrakovými díly pro vozy
+								značek BMW a MINI
+							</li>
+							<li>
+								Nové náhradní díly objednáváme přímo u
+								dodavatele (Originální i druhovýrobu)
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="clean-car" class="service-wrapper fade-in">
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Čištění vozidel</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>Detailní čištění vozu suchou cestou</li>
+							<li>
+								Detailní čistění vozu mokrou cestou (látkové
+								sedačky)
+							</li>
+							<li>
+								Detailní čistění kožených sedaček a ošetření
+								kůže krémem
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div id="wrecked-vehicle" class="service-wrapper fade-in">
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Opravy bouraných vozidel</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>Kontrola všech poškození na vozidle</li>
+							<li>Komunikace s pojišťovnou</li>
+							<li>Karosářské práce</li>
+							<li>Lakování dílů v naší smluvní lakovně</li>
+						</ul>
+					</div>
+				</div>
+				<div id="welding" class="service-wrapper fade-in">
+					<div class="service-photo"></div>
+					<div class="service-content">
+						<div class="service-header">
+							<div>
+								<img
+									src="/static/image/Icons/ozubenaKoleckaModra.png"
+									alt="Service Icon"
+								/>
+							</div>
+							<div>
+								<h1>Zakázková výroba výfuků</h1>
+							</div>
+						</div>
+						<ul class="services-list">
+							<li>Svařování nerezi a hliníku metodou tig</li>
+							<li>Svařování CO<sub>2</sub></li>
+							<li>Opalování a leštění výrobku</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</main>
+		<!-- FOOTER ------------------------------------------------>
+		<footer>
+			<div class="footer-image fade-in">
+				<div class="footer-container">
+					<div class="footer-column">
+						<h2>
+							<a href="/nase-sluzby" class="price-list-link"
+								>NAŠE SLUŽBY</a
+							>
+						</h2>
+						<ul>
+							<li>
+								<a href="/nase-sluzby#car-service"
+									>Autoservis</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#tire-service"
+									>Pneuservis</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#car-electricity-service"
+									>Servis klimatizace</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#technical-control-service"
+									>Kontrola STK a EMISE</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#spare-parts"
+									>Náhradní a vrakové díly</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#clean-car"
+									>Čištění vozidel</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#wrecked-vehicle"
+									>Opravy bouraných vozidel</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#welding"
+									>Zakázková výroba výfuků</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-column">
+						<h2>
+							<a href="/cenik" class="price-list-link">CENÍK</a>
+						</h2>
+						<h2>
+							<a href="/nahradni-dily" class="price-list-link"
+								>NÁHRADNÍ DÍLY</a
+							>
+						</h2>
+					</div>
+					<div class="footer-column">
+						<h2>
+							<a href="/#section-four" class="price-list-link"
+								>KONTAKT</a
+							>
+						</h2>
+						<h3>Telefon</h3>
+						<p>
+							<a
+								href="tel:+420608231421"
+								class="custom-phone-link"
+								>+420 608 231 421</a
+							>
+						</p>
+						<h3>Pracovní doba</h3>
+						<p>Po - Pá 9:00 - 17:00</p>
+						<h3>Kontaktujte nás přes e-mail</h3>
+						<p>
+							<a
+								href="mailto:kamil5181@seznam.cz"
+								class="email-link-footer"
+								>kamil5181@seznam.cz</a
+							>
+						</p>
+						<div class="social-icons">
+							<a
+								href="https://www.facebook.com/kamilcustomer"
+								target="_blank"
+								><img
+									src="/static/image/Icons/fb-icon-white.png"
+									alt="Facebook"
+							/></a>
+							<a
+								href="https://www.instagram.com/autoservis_mogy_tech/"
+								target="_blank"
+								><img
+									src="/static/image/Icons/instagram-icon-white.png"
+									alt="Instagram"
+							/></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>
+						&copy; 2024 Autoservis Mogy-tech. Všechna práva
+						vyhrazena.
+					</p>
+				</div>
+			</div>
+			<button class="top-circle" id="top-button">▲</button>
+		</footer>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	</body>
+</html>

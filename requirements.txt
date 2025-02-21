@@ -1,0 +1,10 @@
+Flask==2.2.2
+Flask-SQLAlchemy==3.0.2
+Flask-Login==0.6.2
+Flask-Admin==1.6.0
+python-dotenv==1.0.0
+mysql-connector-python==8.0.33
+Werkzeug==2.2.2
+MarkupSafe==2.1.2
+
+SQLAlchemy<2.0

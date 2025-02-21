@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<!-- Google Consent Mode - výchozí nastavení souhlasu -->
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("consent", "default", {
+				ad_storage: "denied",
+				analytics_storage: "denied",
+				personalization_storage: "denied",
+				functionality_storage: "denied",
+				security_storage: "granted",
+			});
+		</script>
+
+		<!-- Google Ads Tag -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=AW-800058602"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "AW-800058602");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					"gtm.start": new Date().getTime(),
+					event: "gtm.js",
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NC4WFDCG");
+		</script>
+		<!-- End Google Tag Manager -->
+		<!-- Cookiebot -->
+		<script
+			id="Cookiebot"
+			src="https://consent.cookiebot.com/uc.js"
+			data-cbid="47dc4e8d-7e6e-44ab-8503-723173dbd5ba"
+			data-blockingmode="auto"
+			type="text/javascript"
+		></script>
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/static/image/motor.png" type="image/png" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/style.css') }}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/query.css') }}"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/00ce6104a5.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Autoservis-Mogy-tech/Ceník</title>
+	</head>
+	<body data-theme="default">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NC4WFDCG"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<header id="top">
+			<div class="header-image">
+				<div class="navbar">
+					<div class="logo-white">
+						<a href="/"
+							><img
+								src="/static/image/Logo/logo-bile-dlouhe-mogy.png"
+						/></a>
+					</div>
+					<ul class="links">
+						<li><a href="/#section-one">O Nás</a></li>
+						<li><a href="/nase-sluzby">Naše služby</a></li>
+						<li><a href="/cenik">Ceník</a></li>
+						<li><a href="/nahradni-dily">Náhradní díly</a></li>
+						<li><a href="/#section-four">Kontakt</a></li>
+					</ul>
+					<div class="toggle-btn">
+						<i class="fa-solid fa-bars"></i>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown-menu">
+				<li><a href="/#section-one">O Nás</a></li>
+				<li><a href="/nase-sluzby">Naše služby</a></li>
+				<li><a href="/cenik">Ceník</a></li>
+				<li><a href="/nahradni-dily">Náhradní díly</a></li>
+				<li><a href="/#section-four">Kontakt</a></li>
+			</div>
+		</header>
+		<section class="section-three" id="section-three">
+			<h1>Ceník</h1>
+			<!-- mechanické práce ------------------------------------------------ -->
+			<div class="table-wrapper">
+				<div class="table-wrapper-one">
+					<!-- Sekce pro Mechanické práce -->
+					{% for kategorie_obj in cenik_data %} {% if
+					kategorie_obj.kategorie == "Mechanické práce" %}
+					<h2 class="table-h2-one">
+						{{ kategorie_obj.kategorie }}
+						<hr />
+					</h2>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %} {% if item.nazev
+						!= "Sazba specializovaných prací" %}
+						<tr>
+							<td><b>{{ item.nazev }}</b></td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endif %} {% endfor %}
+						<!-- Statický řádek pro sazbu specializovaných prací -->
+						<tr>
+							<td>
+								<b>Sazba specializovaných prací</b><br />
+								- Diagnostika elektronických a řídicích
+								jednotek<br />
+								- Opravy motorů<br />
+								- Opravy a údržba klimatizace<br />
+								- Náročné karosářské práce
+							</td>
+							<td>1 070,25 Kč/h</td>
+						</tr>
+					</table>
+					{% endif %} {% endfor %}
+					<!-- další služby ------------------------------------------------------------ -->
+					{% for kategorie_obj in cenik_data %} {% if
+					kategorie_obj.kategorie == "Další služby" %}
+					<h2 class="table-h2-one">
+						{{ kategorie_obj.kategorie }}
+						<hr />
+					</h2>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %}
+						<tr>
+							<td><b>{{ item.nazev }}</b></td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endfor %}
+					</table>
+					{% endif %} {% endfor %}
+				</div>
+				<!-- Výměna motorového oleje vč. výměny filtru a prohlídka vozidla ------------- -->
+				{% for kategorie_obj in cenik_data %} {% if
+				kategorie_obj.kategorie == "Výměna motorového oleje" %}
+				<h2 class="table-h2-one">
+					Výměna motorového oleje vč. výměny filtru a prohlídka
+					vozidla
+					<hr />
+				</h2>
+
+				<!-- Sekce pro "Výměna oleje vč. výměny filtru" -->
+				<h3 class="table-h3">Výměna oleje vč. výměny filtru</h3>
+				<table class="price-list-one fade-in">
+					{% for item in kategorie_obj.polozky %} {% if item.nazev ==
+					"Výměna oleje vč. výměny filtru" %}
+					<tr>
+						<td>
+							Kontrola úniku kapalin (stav těsnění
+							a&nbsp;hadic)<br />
+							Test stavu a kontrola hladiny brzdové kapaliny<br />
+							Test stavu a kontrola hladiny chladicí kapaliny<br />
+							Kontrola brzd a&nbsp;lumičů<br />
+							Kontrola podvozku na heveru<br />
+							Vypuštění/odsátí starého oleje<br />
+							Výměna olejového filtru<br />
+							Naplnění novým olejem (5l)<br />
+							Smazání servisního intervalu<br />
+							Délka služby: cca 60 min.<br />
+							<b
+								>V ceně je 5l oleje, v&nbsp;případě potřeby
+								většího množství je třeba si připlatit za další
+								litry (dle typu).</b
+							>
+						</td>
+						<td>{{ item.cena }}</td>
+					</tr>
+					{% endif %} {% endfor %}
+				</table>
+
+				<!-- Sekce pro "Dekarbonizace BG vč. výměny motorového oleje s filtrem" -->
+				<h3 class="table-h3">
+					Dekarbonizace BG vč. výměny motorového oleje s&nbsp;filtrem
+				</h3>
+				<table class="price-list-one fade-in">
+					{% for item in kategorie_obj.polozky %} {% if item.nazev ==
+					"Dekarbonizace BG vč. výměny oleje s filtrem" %}
+					<tr>
+						<td>
+							Dekarbonizace BG<br />
+							Kontrola úniku kapalin (stav těsnění
+							a&nbsp;hadic)<br />
+							Test stavu a kontrola hladiny brzdové kapaliny<br />
+							Test stavu a kontrola hladiny chladicí kapaliny<br />
+							Kontrola brzd a tlumičů<br />
+							Kontrola podvozku na heveru<br />
+							Vypuštění/odsátí starého oleje<br />
+							Výměna olejového filtru<br />
+							Naplnění novým olejem (5l)<br />
+							Smazání servisního intervalu<br />
+							Délka služby: cca 90 min.<br />
+							V ceně jsou tři kroky dekarbonizace od firmy BG<br />
+							<b
+								>V ceně je 5l oleje, v&nbsp;případě potřeby
+								většího množství je třeba si připlatit za další
+								litry (dle typu).</b
+							>
+						</td>
+						<td>{{ item.cena }}</td>
+					</tr>
+					{% endif %} {% endfor %}
+				</table>
+				{% endif %} {% endfor %}
+
+				<div class="table-wrapper-one">
+					<!-- pneuservis ------------------------------------------------- -->
+					{% for kategorie_obj in cenik_data %} {% if
+					kategorie_obj.kategorie == "Pneuservis" %}
+					<h2 class="table-h2-one">
+						Pneuservis
+						<hr />
+					</h2>
+
+					<!-- Podsekce: Kompletní přezutí osobní automobil -->
+					<h3 class="table-h3">Kompletní přezutí osobní automobil</h3>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %} {% if "osobní
+						auto" in item.nazev %}
+						<tr>
+							<td>{{ item.nazev }}</td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endif %} {% endfor %}
+					</table>
+
+					<!-- Podsekce: Kompletní přezutí SUV/VAN -->
+					<h3 class="table-h3">Kompletní přezutí SUV/VAN</h3>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %} {% if "SUV/VAN"
+						in item.nazev %}
+						<tr>
+							<td>{{ item.nazev }}</td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endif %} {% endfor %}
+					</table>
+
+					<!-- Podsekce: Kompletní přezutí RUN FLAT -->
+					<h3 class="table-h3">Kompletní přezutí RUN FLAT</h3>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %} {% if "RUN FLAT"
+						in item.nazev %}
+						<tr>
+							<td>{{ item.nazev }}</td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endif %} {% endfor %}
+					</table>
+
+					<!-- Podsekce: Vyvážení + demontáž a montáž kol -->
+					<h3 class="table-h3">
+						Vyvážení + demontáž a montáž kol na auto <br />- závaží
+						v ceně pod 100g za sadu
+					</h3>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %} {% if "Vyvážení"
+						in item.nazev %}
+						<tr>
+							<td>{{ item.nazev }}</td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endif %} {% endfor %}
+					</table>
+					{% endif %} {% endfor %}
+
+					<!-- Uskladnění pneu nebo kol -->
+					{% for kategorie_obj in cenik_data %} {% if
+					kategorie_obj.kategorie == "Pneuservis" %}
+					<h3 class="table-h3">
+						Uskladnění pneu nebo kol (sezonní cena za 182 dní)
+					</h3>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %} {% if
+						"Uskladnění" in item.nazev or "Ochranný vak" in
+						item.nazev %}
+						<tr>
+							<td>{{ item.nazev }}</td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endif %} {% endfor %}
+					</table>
+					{% endif %} {% endfor %}
+
+					<!-- Sekce pro Čištění vozidla -->
+					{% for kategorie_obj in cenik_data %} {% if
+					kategorie_obj.kategorie == "Čištění vozidla" %}
+					<h2 class="table-h2-one">
+						Čištění vozidla
+						<hr />
+					</h2>
+
+					<!-- Podsekce: Suché čištění interiéru vozidla -->
+					<h3 class="table-h3">Suché čištění interiéru vozidla</h3>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %} {% if item.nazev
+						== "Suché čištění interiéru vozidla" %}
+						<tr>
+							<td>
+								Luxování celého interiéru<br />
+								Luxování celého zavazadlového prostoru<br />
+								Vyčištění a ošetření vnitřních plastů<br />
+								Vyleštění vnitřní strany oken a zrcátek<br />
+								Čištění koberečků suchou cestou<br />
+								Délka služby cca 5h
+							</td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endif %} {% endfor %}
+					</table>
+
+					<!-- Podsekce: Mokré čištění interiéru vozidla -->
+					<h3 class="table-h3">Mokré čištění interiéru vozidla</h3>
+					<table class="price-list-one fade-in">
+						{% for item in kategorie_obj.polozky %} {% if item.nazev
+						== "Mokré čištění interiéru vozidla" %}
+						<tr>
+							<td>
+								Kompletní luxování interiéru<br />
+								Kompletní luxování zavazadlového prostoru<br />
+								Tepování sedadel a koberečků<br />
+								Ošetření kožených sedadel speciálními
+								přípravky<br />
+								Dezinfekce ozonem<br />
+								Vyčištění a ošetření vnitřních plastů<br />
+								Čištění oken a zrcátek z obou stran<br />
+								Čištění koberečků<br />
+								Vyčištění gum dveří a kufru<br />
+								Vyčištění lakovaných částí sloupků<br />
+								Délka služby cca 8h
+							</td>
+							<td>{{ item.cena }}</td>
+						</tr>
+						{% endif %} {% endfor %}
+					</table>
+					{% endif %} {% endfor %}
+
+					<div>
+						<b
+							>Uvedené ceny jsou bez DPH<br />Změna ceny
+							vyhrazena</b
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- FOOTER----------------------------------------------------------------->
+		<footer>
+			<div class="footer-image fade-in">
+				<div class="footer-container">
+					<div class="footer-column">
+						<h2>
+							<a href="/nase-sluzby" class="price-list-link"
+								>NAŠE SLUŽBY</a
+							>
+						</h2>
+						<ul>
+							<li>
+								<a href="/nase-sluzby#car-service"
+									>Autoservis</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#tire-service"
+									>Pneuservis</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#car-electricity-service"
+									>Servis klimatizace</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#technical-control-service"
+									>Kontrola STK a EMISE</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#spare-parts"
+									>Náhradní a vrakové díly</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#clean-car"
+									>Čištění vozidel</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#wrecked-vehicle"
+									>Opravy bouraných vozidel</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#welding"
+									>Zakázková výroba výfuků</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-column">
+						<h2>
+							<a href="/cenik" class="price-list-link">CENÍK</a>
+						</h2>
+						<h2>
+							<a href="/nahradni-dily" class="price-list-link"
+								>NÁHRADNÍ DÍLY</a
+							>
+						</h2>
+					</div>
+					<div class="footer-column">
+						<h2>
+							<a href="/#section-four" class="price-list-link"
+								>KONTAKT</a
+							>
+						</h2>
+						<h3>Telefon</h3>
+						<p>
+							<a
+								href="tel:+420608231421"
+								class="custom-phone-link"
+								>+420 608 231 421</a
+							>
+						</p>
+						<h3>Pracovní doba</h3>
+						<p>Po - Pá 9:00 - 17:00</p>
+						<h3>Kontaktujte nás přes e-mail</h3>
+						<p>
+							<a
+								href="mailto:kamil5181@seznam.cz"
+								class="email-link-footer"
+								>kamil5181@seznam.cz</a
+							>
+						</p>
+						<div class="social-icons">
+							<a
+								href="https://www.facebook.com/kamilcustomer"
+								target="_blank"
+								><img
+									src="/static/image/Icons/fb-icon-white.png"
+									alt="Facebook"
+							/></a>
+							<a
+								href="https://www.instagram.com/autoservis_mogy_tech/"
+								target="_blank"
+								><img
+									src="/static/image/Icons/instagram-icon-white.png"
+									alt="Instagram"
+							/></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>
+						&copy; 2024 Autoservis Mogy-tech. Všechna práva
+						vyhrazena.
+					</p>
+				</div>
+			</div>
+			<!-- BUTTON UP -->
+			<button class="top-circle" id="top-button">▲</button>
+		</footer>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	</body>
+</html>

@@ -1,0 +1,917 @@
+/* ==================================================================================
+    GLOBAL RESET A KOŘENOVÉ PROMĚNNÉ
+   ================================================================================== */
+
+/* Globální reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+/* Kořenové proměnné */
+:root {
+	--text-black: #000000;
+	--dark-blue: #15324c;
+	--header-right-top: #ec531c;
+	--header-right-text: #ffffff;
+	--orange: #ec531c;
+	--white-text: #cecece;
+	--h1-text-white: #fbf9f9;
+	--background-right-header: #cecece;
+	--about-us-background: #ffffff;
+	--promo-background: #d7d7d7;
+	--shadow: rgba(0, 0, 0, 0.3);
+	--contact-background: #ffffff;
+	--contact-text-background: #eeeded;
+	--circle-background: #000000;
+	--circle-text: #000000;
+	--promo-text: rgb(255, 255, 255);
+	--form-red: #db0000;
+	--form-green: #008000;
+	--footer-bottom-background: #17212b;
+	--clear-white-button: #ffffff;
+}
+
+/* Základní nastavení písma pro celé tělo stránky */
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+/* Všechny H1 nadpisy */
+h1 {
+	text-align: center;
+	color: var(--orange);
+	padding: 0px 0px 30px 0px;
+}
+
+/* ==================================================================================
+    HEADER (Horní část stránky, logo, navigace, atd.)
+   ================================================================================== */
+.header-image {
+	position: relative;
+	background-image: linear-gradient(
+			to right,
+			rgba(21, 50, 76, 1) 0%,
+			rgba(21, 50, 76, 1) 10%,
+			rgba(21, 50, 76, 0.95) 20%,
+			rgba(21, 50, 76, 0.9) 30%,
+			rgba(21, 50, 76, 0.85) 40%,
+			rgba(21, 50, 76, 0.8) 50%,
+			rgba(21, 50, 76, 0.75) 60%,
+			rgba(21, 50, 76, 0.7) 70%,
+			rgba(21, 50, 76, 0.65) 80%,
+			rgba(21, 50, 76, 0) 100%
+		),
+		url(/static/image/Header-image/autoOpacne.png);
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 400px;
+}
+
+li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: var(--orange);
+	font-size: 16px;
+}
+
+a:hover {
+	color: var(--promo-background);
+}
+
+header {
+	position: relative;
+}
+
+.navbar {
+	padding: 0 10rem;
+	width: 100%;
+	height: 60px;
+	margin: 0 auto;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.navbar .logo a {
+	font-size: 1.5rem;
+	font-weight: bold;
+}
+
+.navbar .links {
+	display: flex;
+	gap: 2rem;
+}
+
+.navbar .toggle-btn {
+	color: var(--clear-white-button) !important;
+	font-size: 1.5rem;
+	cursor: pointer;
+	display: none;
+	z-index: 999;
+}
+
+.logo-white img {
+	height: 40px;
+	margin-top: 10px;
+}
+
+/* dropdown menu  */
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 60px;
+	right: 2rem;
+	height: 0;
+	width: 300px;
+	backdrop-filter: blur(5px);
+	border-radius: 10px;
+	overflow: hidden;
+	transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+.dropdown-menu.open {
+	height: 280px;
+}
+.dropdown-menu li {
+	padding: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.header-text {
+	width: 100%;
+	margin: 0 auto;
+	position: absolute;
+	padding: 0 10rem;
+	top: 220px;
+	right: 50%;
+	transform: translateX(50%);
+	color: var(--orange);
+	text-align: left;
+}
+
+/* responzivita navigace */
+
+/* ==================================================================================
+    HEADER-MAIN (Mezilehlá část pod hlavním bannerem)
+   ================================================================================== */
+
+.header-between {
+	margin: 0 auto;
+	width: 100%;
+	padding: 0 10rem;
+	position: absolute;
+	top: 320px;
+	z-index: 2;
+	display: flex;
+	justify-content: space-around;
+	flex-direction: row;
+}
+
+.header-between div {
+	flex: 1;
+	height: 100%;
+}
+
+/* Tlačítko mezi hlavičkami (obecné styly) */
+.b-f-button {
+	background-color: var(--orange);
+	color: var(--h1-text-white);
+	padding: 7px;
+	font-size: 12px;
+	text-decoration: none;
+	display: inline-block;
+	margin-top: 10px;
+	border-radius: 15px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.b-f-button:hover {
+	transform: scale(1.05);
+	color: var(--clear-white-button);
+}
+
+/* Podsekce "between-first" - levý box */
+.between-first {
+	background-color: var(--dark-blue);
+	z-index: 4;
+	display: flex;
+	align-items: flex-start;
+	padding: 15px;
+}
+
+.between-first img {
+	height: 50px;
+	margin-right: 10px;
+}
+
+.text-container-b {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.text-main {
+	color: var(--orange);
+	margin-top: 10px;
+}
+
+.text-sub {
+	margin-top: 10px;
+	font-size: 12px;
+	color: var(--h1-text-white);
+}
+
+/* Podsekce "between-second" - pravý box */
+.between-second {
+	background-color: var(--about-us-background);
+	z-index: 4;
+	display: flex;
+	padding: 15px;
+}
+
+.between-second img {
+	height: 50px;
+	margin-right: 10px;
+}
+
+.text-main-black {
+	color: var(--text-black);
+	margin-top: 10px;
+}
+
+.text-sub-black {
+	color: var(--text-black);
+	font-size: 12px;
+	margin-top: 10px;
+}
+
+/* ==================================================================================
+    MAIN - MĚSÍČNÍ PROMO
+   ================================================================================== */
+
+.monthly-promo {
+	width: 70%;
+	margin: 0 auto;
+	padding-top: 190px;
+}
+
+.monthly-promo-wrapper {
+	display: flex;
+	background-color: #15324c;
+	background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23606970' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+	border-radius: 10px;
+}
+
+.monthly-content {
+	display: flex;
+	flex: 1;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0;
+	flex-basis: 50%;
+}
+
+.monthly-content span {
+	font-size: 72px;
+	margin-right: 10px;
+	color: var(--white-text);
+}
+
+/* Kontejner pro šipku a slevu */
+.discount-container {
+	display: flex;
+	align-items: center;
+	padding: 15px 0px;
+}
+
+.discount-container .arrow-down {
+	width: 50px;
+	height: 50px;
+}
+
+.monthly-content p {
+	text-align: center;
+	color: var(--white-text);
+	padding: 10px 30px;
+}
+
+/* Tlačítko call-to-action */
+.cta-button {
+	background-color: var(--orange);
+	border: none;
+	padding: 15px 20px;
+	font-size: 18px;
+	cursor: pointer;
+	border-radius: 20px;
+	margin: 30px 30px 0px 30px;
+}
+
+.cta-button a {
+	text-decoration: none;
+	color: var(--white-text);
+}
+
+.cta-button:hover {
+	background-color: #cc5200;
+}
+
+/* Blok s kontaktními údaji v měsíční promo sekci */
+.monthly-contact {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+}
+
+.contact-info {
+	background-color: rgba(0, 0, 0, 0.5);
+	padding: 20px;
+	border-radius: 8px;
+	display: inline-block;
+	margin-bottom: 20px;
+}
+
+.contact-info p {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 10px 0;
+}
+
+.monthly-contact .monthly-img {
+	width: 20px;
+	height: 24px;
+	margin-right: 10px;
+	vertical-align: middle;
+}
+
+.custom-phone-link {
+	color: var(--white-text);
+	margin-bottom: 10px;
+	text-decoration: none;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.custom-phone-link:hover,
+.custom-phone-link:focus {
+	color: var(--orange);
+}
+
+/* Obrázky v měsíční promo sekci */
+.monthly-promo-images {
+	display: flex;
+	flex: 1;
+	flex-basis: 50%;
+	align-items: center;
+	padding: 20px 0px;
+}
+
+.monthly-promo-images img {
+	width: 100%;
+}
+
+/* ==================================================================================
+    O NÁS (ABOUT-US)
+   ================================================================================== */
+
+#section-one {
+	z-index: 1;
+}
+
+.section-about-us {
+	padding-top: 70px;
+	padding-bottom: 70px;
+	background-color: var(--about-us-background);
+}
+
+.about-us-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	gap: 60px;
+}
+
+.what-we-do-text p {
+	text-align: center;
+}
+
+/* Ikony pro "co děláme" */
+.icon-container {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 50px;
+}
+
+.icon-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.icon-1 {
+	background-image: url(/static/image/Icons/ikona1.png);
+}
+
+.icon-2 {
+	background-image: url(/static/image/Icons/ikona2.png);
+}
+
+.icon-3 {
+	background-image: url(/static/image/Icons/ikona3.png);
+}
+
+.icon-4 {
+	background-image: url(/static/image/Icons/ikona4.png);
+}
+
+.galery {
+	width: 100px;
+	height: 100px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: contain;
+}
+
+.icon-text {
+	text-align: center;
+	padding-top: 20px;
+}
+
+/* ==================================================================================
+    PROMO-SECTION (Nabídka různých karet s promo obrázky)
+   ================================================================================== */
+
+.section-promo {
+	background-color: var(--dark-blue);
+	padding: 70px 0px;
+}
+
+.promo-wrapper {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+	width: 70%;
+	margin: 0 auto;
+}
+
+.promo-content {
+	position: absolute;
+	left: 15px;
+	bottom: 15px;
+}
+
+.promo-content a {
+	font-size: 16px;
+	text-decoration: none;
+	color: var(--promo-text);
+	background-color: var(--dark-blue);
+	border-radius: 5px;
+}
+
+/* Karty s promo obrázky */
+.promo-card {
+	height: 200px;
+	width: 250px;
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	border-radius: 8px;
+	position: relative;
+	width: calc(100% / 3 - 60px / 3);
+	transition: 0.3s;
+}
+
+/* Jednotlivé promo obrázky */
+.photo1 {
+	background-image: url(/static/image/Promo/autoservis2.png);
+	background-position: 50% 40%;
+}
+
+.photo2 {
+	background-image: url(/static/image/Promo/pneuservis.png);
+	background-position: 50% 65%;
+}
+
+.photo3 {
+	background-image: url(/static/image/Promo/autoelektrina.png);
+	background-position: 50% 30%;
+}
+
+.photo4 {
+	background-image: url(/static/image/Promo/klimatizace.jpg);
+}
+
+.photo5 {
+	background-image: url(/static/image/Promo/stk.jpg);
+	background-position: 50% 0%;
+}
+
+.photo6 {
+	background-image: url(/static/image/Promo/nahradni-dily.jpg);
+}
+
+.photo7 {
+	background-image: url(/static/image/Promo/autodetailing.jpg);
+}
+
+.photo8 {
+	background-image: url(/static/image/Promo/opravabouracek.jpg);
+}
+
+.photo9 {
+	background-image: url(/static/image/Promo/svarenitig.jpg);
+	background-position: 50% 70%;
+}
+
+.promo-card:hover {
+	transform: scale(1.1);
+	background-size: 110%;
+}
+
+/* ==================================================================================
+    KONTAKTNÍ SEKCE
+   ================================================================================== */
+
+.contact-section {
+	background-color: var(--contact-background);
+	padding: 70px 0px;
+}
+
+.contact-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	display: flex;
+	gap: 20px;
+	justify-content: space-between;
+}
+
+#maps-wrapper {
+	flex-basis: 50%;
+	max-width: 100%;
+}
+
+/* Logo kontakt */
+.contact-logo-wrapper {
+	display: flex;
+	justify-content: flex-start;
+	margin-bottom: 20px;
+}
+
+.contact-logo {
+	width: 220px;
+}
+
+/* Text v kontaktech */
+.contact-text {
+	color: var(--text-black);
+	line-height: 40px;
+}
+
+.contact-text a {
+	color: var(--text-black);
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.contact-text a:hover,
+.contact-text a:focus {
+	color: var(--orange);
+}
+
+.socialM-icon {
+	height: 27px;
+	vertical-align: middle;
+}
+
+.mail-icon {
+	height: 20px;
+	width: 25px;
+}
+
+/* ==================================================================================
+    SEKCE TŘI - CENÍK (PRICE-LIST)
+   ================================================================================== */
+
+.section-three {
+	padding: 70px 0px;
+	background-color: var(--contact-background);
+}
+
+.section-three h2 {
+	color: var(--orange);
+}
+
+table {
+	margin: auto;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-wrapper {
+	width: 70%;
+	margin: 0 auto;
+}
+
+td,
+th {
+	padding: 6px 10px 6px 0;
+}
+
+td:first-child {
+	text-align: left;
+}
+
+td:last-child {
+	text-align: right;
+}
+
+.table-h2-one {
+	margin: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.table-h3 {
+	margin: auto;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+/* ==================================================================================
+    FORMULÁŘ (FORM)
+   ================================================================================== */
+
+.contact-form {
+	padding: 70px 0px;
+	background-color: var(--contact-background);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+}
+
+.notifName,
+.notifEmail {
+	display: none;
+	color: var(--orange);
+	margin-top: 10px;
+}
+
+.fullName,
+.email {
+	background-color: transparent;
+	border: none;
+	border-bottom: 2px solid var(--text-black);
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 5px 10px;
+	outline: none;
+	color: var(--text-black);
+	text-align: center;
+}
+
+.message {
+	color: var(--text-black);
+	background-color: var(--white-text);
+	outline: none;
+	padding: 10px;
+	margin-bottom: 5px;
+	width: 800px;
+	height: 150px;
+}
+
+.text-counter {
+	margin-bottom: 5px;
+	color: var(--text-black);
+}
+
+.form button {
+	background-color: var(--dark-blue);
+	color: var(--white-text);
+	border: none;
+	padding: 5px 10px;
+	margin-top: 10px;
+}
+
+/* ==================================================================================
+    FOOTER (Patička stránky)
+   ================================================================================== */
+
+.footer-image {
+	background-color: #15324c;
+	background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23606970' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.footer-container {
+	width: 70%;
+	margin: 0 auto;
+	padding: 70px 0px;
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+}
+
+.footer-column {
+	flex: 1;
+	margin: 0 20px;
+	min-width: 200px;
+	text-align: center;
+}
+
+.footer-column h2 {
+	font-size: 18px;
+	margin: 20px 0px;
+	color: var(--orange);
+}
+
+.footer-column h3 {
+	font-size: 16px;
+	margin-bottom: 10px;
+	color: var(--white-text);
+}
+
+.footer-column p {
+	margin: 0 0 10px 0;
+	padding: 0;
+	color: var(--white-text);
+	text-decoration: none;
+}
+
+.footer-column ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	color: var(--white-text);
+	text-decoration: none;
+}
+
+.footer-column ul li {
+	margin-bottom: 10px;
+}
+
+.footer-column ul li a {
+	color: var(--white-text);
+	text-decoration: none;
+}
+
+.price-list-link {
+	color: inherit;
+	text-decoration: none;
+}
+
+/* Ikony sociálních sítí */
+.social-icons {
+	display: flex;
+	gap: 10px;
+	justify-content: center;
+	margin-top: 20px;
+}
+
+.social-icons img {
+	width: 20px;
+	height: 20px;
+}
+
+/* Spodní proužek ve footeru */
+.footer-bottom {
+	text-align: center;
+	padding: 20px 0;
+	background-color: var(--footer-bottom-background);
+	font-size: 14px;
+	color: var(--orange);
+}
+
+.footer-bottom p {
+	margin: 0;
+}
+
+.email-link-footer {
+	color: var(--white-text);
+	text-decoration: none;
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.email-link-footer:hover,
+.email-link-footer:focus {
+	color: var(--orange);
+}
+
+/* ==================================================================================
+    TLAČÍTKO NAHORU (BUTTON UP)
+   ================================================================================== */
+
+.top-circle {
+	height: 45px;
+	width: 45px;
+	border-radius: 50%;
+	background-color: var(--circle-background);
+	color: var(--h1-text-white);
+	text-align: center;
+	text-decoration: none;
+	line-height: 40px;
+	font-size: 18px;
+	position: fixed;
+	bottom: 10px;
+	right: 10px;
+	display: none;
+	transition: 0.4s ease;
+}
+
+.top-page {
+	display: none;
+	text-decoration: none;
+	color: var(--circle-text);
+	font-size: 25px;
+}
+
+.top-circle:hover {
+	box-shadow: 0px 0px 20px 20px rgba(0, 0, 0, 0.5);
+}
+
+.show {
+	display: block;
+}
+
+.hide {
+	display: none;
+}
+
+/* ==================================================================================
+    HTML THANK-YOU STRÁNKA
+   ================================================================================== */
+
+.thank-you {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 190px;
+	height: 40vh;
+}
+
+/* ==================================================================================
+	HTML ADMIN SEKCE
+   ================================================================================== */
+
+.admin-section {
+	width: 90%;
+	margin: 0 auto;
+	padding-top: 190px;
+	height: 40vh;
+}
+
+.admin-section form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+/* ==================================================================================
+	Unikátní styly pro přihlašovací formulář v login.html
+	================================================================================== */
+.login-container {
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 20px;
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	background-color: #f9f9f9;
+}
+
+.login-form-group {
+	margin-bottom: 15px;
+}
+
+.login-input {
+	width: 100%;
+	padding: 10px;
+	margin-top: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+
+.login-button {
+	width: 100%;
+	padding: 10px;
+	background-color: #007bff;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.login-button:hover {
+	background-color: #0056b3;
+}
+.login-section {
+	width: 90%;
+	margin: 0 auto;
+	padding: 100px 0;
+}

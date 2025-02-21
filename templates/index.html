@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+	<head>
+		<!-- Google Consent Mode - výchozí nastavení souhlasu -->
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("consent", "default", {
+				ad_storage: "denied",
+				analytics_storage: "denied",
+				personalization_storage: "denied",
+				functionality_storage: "denied",
+				security_storage: "granted",
+			});
+		</script>
+		<!-- Google tag (gtag.js) -->
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=AW-800058602"
+		></script>
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "AW-800058602");
+		</script>
+		<!-- Google Tag Manager -->
+		<script>
+			(function (w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					"gtm.start": new Date().getTime(),
+					event: "gtm.js",
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-NC4WFDCG");
+		</script>
+		<!-- End Google Tag Manager -->
+		<!-- Cookiebot -->
+		<script
+			id="Cookiebot"
+			src="https://consent.cookiebot.com/uc.js"
+			data-cbid="47dc4e8d-7e6e-44ab-8503-723173dbd5ba"
+			data-blockingmode="auto"
+			type="text/javascript"
+		></script>
+
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" href="/static/image/motor.png" type="image/png" />
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/style.css') }}"
+		/>
+		<link
+			rel="stylesheet"
+			href="{{ url_for('static', filename='css/query.css') }}"
+		/>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap"
+			rel="stylesheet"
+		/>
+		<script
+			src="https://kit.fontawesome.com/00ce6104a5.js"
+			crossorigin="anonymous"
+		></script>
+		<title>Autoservis-Mogy-tech</title>
+	</head>
+	<body data-theme="default">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript
+			><iframe
+				src="https://www.googletagmanager.com/ns.html?id=GTM-NC4WFDCG"
+				height="0"
+				width="0"
+				style="display: none; visibility: hidden"
+			></iframe
+		></noscript>
+		<!-- End Google Tag Manager (noscript) -->
+		<!-- HEADER ----------------------------------------------------------------- -->
+		<header id="top">
+			<div class="header-image">
+				<div class="navbar">
+					<div class="logo-white">
+						<a href="/"
+							><img
+								src="/static/image/Logo/logo-bile-dlouhe-mogy.png"
+						/></a>
+					</div>
+					<ul class="links">
+						<li><a href="/#section-one">O Nás</a></li>
+						<li><a href="/nase-sluzby">Naše služby</a></li>
+						<li><a href="/cenik">Ceník</a></li>
+						<li><a href="/nahradni-dily">Náhradní díly</a></li>
+						<li><a href="/#section-four">Kontakt</a></li>
+					</ul>
+					<div class="toggle-btn">
+						<i class="fa-solid fa-bars"></i>
+					</div>
+				</div>
+			</div>
+			<div class="dropdown-menu">
+				<li><a href="/#section-one">O Nás</a></li>
+				<li><a href="/nase-sluzby">Naše služby</a></li>
+				<li><a href="/cenik">Ceník</a></li>
+				<li><a href="/nahradni-dily">Náhradní díly</a></li>
+				<li><a href="/#section-four">Kontakt</a></li>
+			</div>
+			<!------------------HEADER BETWEEN-------------------------------------------------------->
+			<div class="header-between">
+				<div class="between-first">
+					<img src="/static/image/Icons/ozubenakoleckasbilou.png" />
+					<div class="text-container-b">
+						<div class="text-main">
+							Profesionální opravy vozidel
+							<div class="text-sub">
+								Poskytujeme kompletní opravy všech typů vozidel,
+								včetně podvozku, motorů a autoelektriky. Naše
+								zkušenosti se postarají o to, aby váš vůz byl
+								vždy v perfektním stavu.
+							</div>
+							<a href="/nase-sluzby" class="b-f-button"
+								>Více informací</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="between-second">
+					<img src="/static/image/Icons/stk.png" />
+					<div class="text-container-b">
+						<div class="text-main-black">
+							Komplexní řešení STK
+							<div class="text-sub-black">
+								Zajistíme kompletní přípravu vašeho vozidla na
+								STK a technickou kontrolu. Dovezte nám svůj vůz
+								a my se postaráme o všechny formality a
+								zajištění technické kontroly.
+							</div>
+							<a
+								href="/nase-sluzby#technical-control-service"
+								class="b-f-button"
+								>Více informací</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="between-second">
+					<img src="/static/image/Icons/autodiagnostika.png" />
+					<div class="text-container-b">
+						<div class="text-main-black">
+							Autodiagnostika
+							<div class="text-sub-black">
+								Moderní diagnostické nástroje pro přesnou
+								identifikaci a řešení problémů vašeho vozidla.
+								Nabízíme profesionální diagnostiku všech značek
+								a modelů.
+							</div>
+							<a
+								href="/nase-sluzby#car-electricity-service"
+								class="b-f-button"
+								>Více informací</a
+							>
+						</div>
+					</div>
+				</div>
+				<div class="between-second">
+					<img src="/static/image/Icons/air-conditioner-orange.png" />
+					<div class="text-container-b">
+						<div class="text-main-black">
+							Autoklimatizace
+							<div class="text-sub-black">
+								Profesionální servis a plnění klimatizací pro
+								všechny typy vozidel. Zajistíme, aby vaše
+								klimatizace fungovala efektivně a spolehlivě, ať
+								už jedete kamkoliv.
+							</div>
+							<a
+								href="/nase-sluzby#air-conditioner-service"
+								class="b-f-button"
+								>Více informací</a
+							>
+						</div>
+					</div>
+				</div>
+			</div>
+			<h2 class="header-text">
+				Spolehlivé řešení navržené s ohledem <br />
+				na Vaše specifické potřeby.
+			</h2>
+		</header>
+		<!-- MAIN------------------------------------------------------------------- -->
+		<!-- SECTION MONTHLY PROMO -->
+		<main>
+			<section class="monthly-promo">
+				<h1>{{ promo.nadpis }}</h1>
+				<div class="monthly-promo-wrapper">
+					<div class="monthly-content">
+						<div class="discount-container">
+							<span>{{ promo.discount }}</span>
+							<img
+								class="arrow-down"
+								src="{{ url_for('static', filename='image/Icons/arrow-down.png') }}"
+								alt="Šipka dolů"
+							/>
+						</div>
+						<p>{{ promo.popis|safe }}</p>
+						<button class="cta-button">
+							<a href="#section-four"
+								>ZAVOLEJ A ZAREZERVUJ SI SVŮJ TERMÍN JEŠTĚ
+								DNES<br
+							/></a>
+						</button>
+						<div class="monthly-contact">
+							<p>
+								<img
+									class="monthly-img"
+									src="{{ url_for('static', filename='image/Icons/call-icon-white.png') }}"
+									alt="Telefon"
+								/>
+								<a
+									href="tel:{{ promo.phone }}"
+									class="custom-phone-link"
+									>{{ promo.phone }}</a
+								>
+							</p>
+							<p>
+								<img
+									class="monthly-img"
+									src="{{ url_for('static', filename='image/Icons/location-white.png') }}"
+									alt="Adresa"
+								/>
+								{{ promo.address|safe }}
+							</p>
+						</div>
+					</div>
+					<div class="monthly-promo-images">
+						<img
+							src="{{ url_for('static', filename='image/Promo/' + promo.image) }}"
+							alt="Promo fotografie"
+						/>
+					</div>
+				</div>
+			</section>
+			<!-- SECTION ABOUT US -->
+			<section class="section-about-us" id="section-one">
+				<h1 class="about-us-h1 fade-in">Proč vybrat právě nás?</h1>
+				<div class="about-us-wrapper">
+					<div>
+						<article class="what-we-do-text fade-in">
+							<p>
+								V našem servisu se zaměřujeme na poskytování
+								služeb přizpůsobených specifickým potřebám
+								každého zákazníka. Díky našim dlouholetým
+								zkušenostem rychle a efektivně řešíme jakýkoli
+								problém s vaším vozidlem, ať už jde o  rutinní
+								údržbu nebo složitější opravy. Jsme vždy
+								připraveni poskytnout odborné poradenství
+								a navrhnout nejlepší řešení pro vaše vozidlo.
+								Dlouhodobé vztahy s našimi zákazníky jsou pro
+								nás prioritou, proto klademe důraz na
+								transparentní komunikaci a férové jednání. Naším
+								cílem je opravit vaše vozidlo tak, abyste se na
+								cestě cítili bezpečně a pohodlně. Díky naší
+								důslednosti a závazku k vysokým standardům se
+								můžete spolehnout, že vaše vozidlo bude vždy
+								v nejlepších rukou.
+							</p>
+						</article>
+						<div class="icon-container">
+							<div class="icon-wrapper">
+								<div class="galery icon-1"></div>
+								<div class="icon-text">
+									Profesionální přístup
+								</div>
+							</div>
+							<div class="icon-wrapper">
+								<div class="galery icon-2"></div>
+								<div class="icon-text">
+									Individuální jednání
+								</div>
+							</div>
+							<div class="icon-wrapper">
+								<div class="galery icon-3"></div>
+								<div class="icon-text">
+									Práce s kvalitními materiály
+								</div>
+							</div>
+							<div class="icon-wrapper">
+								<div class="galery icon-4"></div>
+								<div class="icon-text">
+									Více než 14 let zkušeností
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- PROMO SECTION -->
+			<section class="section-promo" id="section-two">
+				<h1>Naše služby</h1>
+				<div class="promo-wrapper">
+					<div class="photo1 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#car-service"
+									>Autoservis</a
+								>
+							</h2>
+						</div>
+					</div>
+					<div class="photo2 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#tire-service"
+									>Pneuservis</a
+								>
+							</h2>
+						</div>
+					</div>
+					<div class="photo3 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#car-electricity-service"
+									>Automobilové elektronické systémy</a
+								>
+							</h2>
+						</div>
+					</div>
+					<div class="photo4 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#air-conditioner-service"
+									>Servis klimatizace</a
+								>
+							</h2>
+						</div>
+					</div>
+					<div class="photo5 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#technical-control-service"
+									>Kontrola STK a EMISE
+								</a>
+							</h2>
+						</div>
+					</div>
+					<div class="photo6 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#spare-parts"
+									>Náhradní a vrakové díly</a
+								>
+							</h2>
+						</div>
+					</div>
+					<div class="photo7 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#clean-car"
+									>Čištění vozidel</a
+								>
+							</h2>
+						</div>
+					</div>
+					<div class="photo8 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#wrecked-vehicle"
+									>Opravy bouraných vozidel</a
+								>
+							</h2>
+						</div>
+					</div>
+					<div class="photo9 promo-card fade-in">
+						<div class="promo-content">
+							<h2>
+								<a href="/nase-sluzby#welding"
+									>Zakázková výroba výfuků</a
+								>
+							</h2>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- CONTACT SECTION -->
+			<section class="contact-section" id="section-four">
+				<h1>Kontakt</h1>
+				<div class="contact-wrapper">
+					<div class="contact-text fade-in">
+						<div class="contact-logo-wrapper">
+							<img
+								class="contact-logo"
+								src="/static/image/Logo/logo-dlouhe-Mogy-tech.png"
+							/>
+						</div>
+						<p>
+							<i
+								><img
+									class="socialM-icon"
+									src="/static/image/Icons/location-icon.png" /></i
+							>     U Michelského lesa 1267, 140 00 Praha 4
+						</p>
+						<p>
+							<i>
+								<img
+									class="socialM-icon"
+									src="/static/image/Icons/call-icon.png"
+									alt="Telefon ikonka"
+								/>
+							</i>
+							<a
+								href="tel:+420608231421"
+								class="custom-phone-link"
+								>  608 231 421</a
+							>
+						</p>
+
+						<p>
+							<i
+								><img
+									class="socialM-icon mail-icon"
+									src="/static/image/Icons/mail-icon.png"
+							/></i>
+							<a
+								href="mailto:kamil5181@seznam.cz"
+								class="email-link-footer"
+								> kamil5181@seznam.cz</a
+							>
+						</p>
+
+						<p>
+							<a
+								href="https://www.instagram.com/autoservis_mogy_tech/"
+								target="_blank"
+								><i
+									><img
+										class="socialM-icon"
+										src="/static/image/Icons/insta-icon-blue.png" /></i
+								>  Instagram</a
+							>
+						</p>
+						<p>
+							<a
+								href="https://www.facebook.com/kamilcustomer"
+								target="_blank"
+								><i
+									><img
+										class="socialM-icon"
+										src="/static/image/Icons/fb-icon-blue.png" /></i
+								>  Facebook</a
+							>
+						</p>
+					</div>
+					<div id="maps-wrapper">
+						<iframe
+							style="border: none"
+							src="https://frame.mapy.cz/s/bagedumuse"
+							width="100%"
+							height="280"
+							frameborder="0"
+						></iframe>
+					</div>
+				</div>
+			</section>
+			<!-- section form --------------------------->
+			<section id="contackt-form">
+				<h1>Kontaktujte nás s poptávkou</h1>
+				<form action="/submit" method="POST" class="contact-form">
+					<!-- Textarea pro zprávu -->
+					<textarea
+						name="message"
+						class="message"
+						placeholder="Zpráva"
+						required
+					></textarea
+					><br />
+					<p class="text-counter">0</p>
+
+					<!-- Jméno a příjmení -->
+					<input
+						type="text"
+						name="fullName"
+						class="fullName"
+						placeholder="Jméno a příjmení"
+						required
+					/><br />
+					<p class="notifName">Vyplňte jméno a příjmení</p>
+
+					<!-- E-mail -->
+					<input
+						type="email"
+						name="email"
+						class="email"
+						placeholder="Email"
+						pattern=".*\.[a-z]{2,}$"
+						required
+					/><br />
+					<p class="notifEmail">Vyplňte email</p>
+
+					<!-- Tlačítko odeslat -->
+					<button type="submit">Odeslat</button>
+				</form>
+			</section>
+		</main>
+		<!-- FOOTER --------------------------------------------------------->
+		<footer>
+			<div class="footer-image fade-in">
+				<div class="footer-container">
+					<div class="footer-column">
+						<h2>SLUŽBY</h2>
+						<ul>
+							<li>
+								<a href="/nase-sluzby#car-service"
+									>Autoservis</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#tire-service"
+									>Pneuservis</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#car-electricity-service"
+									>Servis klimatizace</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#technical-control-service"
+									>Kontrola STK a EMISE</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#spare-parts"
+									>Náhradní a vrakové díly</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#clean-car"
+									>Čištění vozidel</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#wrecked-vehicle"
+									>Opravy bouraných vozidel</a
+								>
+							</li>
+							<li>
+								<a href="/nase-sluzby#welding"
+									>Zakázková výroba výfuků</a
+								>
+							</li>
+						</ul>
+					</div>
+					<div class="footer-column">
+						<h2>
+							<a href="/cenik" class="price-list-link">CENÍK</a>
+						</h2>
+					</div>
+					<div class="footer-column">
+						<h2>KONTAKT</h2>
+						<h3>Telefon</h3>
+						<p>
+							<a
+								href="tel:+420608231421"
+								class="custom-phone-link"
+								>+420 608 231 421</a
+							>
+						</p>
+						<h3>Pracovní doba</h3>
+						<p>Po - Pá 9:00 - 17:00</p>
+						<h3>Kontaktujte nás přes e-mail</h3>
+						<p>
+							<a
+								href="mailto:kamil5181@seznam.cz"
+								class="email-link-footer"
+								>kamil5181@seznam.cz</a
+							>
+						</p>
+						<h3>
+							<a
+								href="{{ url_for('auth.login') }}"
+								class="custom-phone-link"
+							>
+								Admin sekce
+							</a>
+						</h3>
+						<div class="social-icons">
+							<a
+								href="https://www.facebook.com/kamilcustomer"
+								target="_blank"
+								><img
+									src="/static/image/Icons/fb-icon-white.png"
+									alt="Facebook"
+							/></a>
+							<a
+								href="https://www.instagram.com/autoservis_mogy_tech/"
+								target="_blank"
+								><img
+									src="/static/image/Icons/instagram-icon-white.png"
+									alt="Instagram"
+							/></a>
+						</div>
+					</div>
+				</div>
+				<div class="footer-bottom">
+					<p>
+						&copy; 2024 Autoservis Mogy-tech. Všechna práva
+						vyhrazena.
+					</p>
+				</div>
+			</div>
+			<!-- BUTTON UP -->
+			<button class="top-circle" id="top-button">▲</button>
+		</footer>
+		<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+	</body>
+</html>
