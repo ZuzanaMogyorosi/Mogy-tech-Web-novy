@@ -203,7 +203,7 @@
 		<!-- SECTION MONTHLY PROMO -->
 		<main>
 			<section class="monthly-promo">
-				<h1>{{ promo.nadpis }}</h1>
+				<h1 class="monthly-promo-h1">{{ promo.nadpis }}</h1>
 				<div class="monthly-promo-wrapper">
 					<div class="monthly-content">
 						<div class="discount-container">
@@ -397,7 +397,7 @@
 			<section class="contact-section" id="section-four">
 				<h1>Kontakt</h1>
 				<div class="contact-wrapper">
-					<div class="contact-text fade-in">
+					<div class="contact-text">
 						<div class="contact-logo-wrapper">
 							<img
 								class="contact-logo"
@@ -473,52 +473,56 @@
 					</div>
 				</div>
 			</section>
-			<!-- section form --------------------------->
+			<!-- section contact form --------------------------->
 			<section id="contackt-form">
 				<h1>Kontaktujte nás s poptávkou</h1>
-				<form action="/submit" method="POST" class="contact-form">
-					<!-- Textarea pro zprávu -->
-					<textarea
-						name="message"
-						class="message"
-						placeholder="Zpráva"
-						required
-					></textarea
-					><br />
-					<p class="text-counter">0</p>
-
-					<!-- Jméno a příjmení -->
-					<input
-						type="text"
-						name="fullName"
-						class="fullName"
-						placeholder="Jméno a příjmení"
-						required
-					/><br />
-					<p class="notifName">Vyplňte jméno a příjmení</p>
-
-					<!-- E-mail -->
-					<input
-						type="email"
-						name="email"
-						class="email"
-						placeholder="Email"
-						pattern=".*\.[a-z]{2,}$"
-						required
-					/><br />
-					<p class="notifEmail">Vyplňte email</p>
-
-					<!-- Tlačítko odeslat -->
-					<button type="submit">Odeslat</button>
-				</form>
+				<div class="contact-form-wrapper">
+					<form action="/submit" method="POST" class="contact-form">
+						<!-- Levý sloupec: Zpráva + counter -->
+						<div class="message-col">
+							<textarea
+								name="message"
+								class="message"
+								placeholder="Zpráva"
+								required
+							></textarea>
+							<p class="text-counter">0</p>
+						</div>
+						<!-- Pravý sloupec: Jméno, Email, Tlačítko -->
+						<div class="form-col">
+							<input
+								type="text"
+								name="fullName"
+								class="fullName"
+								placeholder="Jméno a příjmení"
+								required
+							/>
+							<p class="notifName">Vyplňte jméno a příjmení</p>
+							<input
+								type="email"
+								name="email"
+								class="email"
+								placeholder="Email"
+								pattern=".*\.[a-z]{2,}$"
+								required
+							/>
+							<p class="notifEmail">Vyplňte email</p>
+							<button type="submit">Odeslat</button>
+						</div>
+					</form>
+				</div>
 			</section>
 		</main>
 		<!-- FOOTER --------------------------------------------------------->
 		<footer>
-			<div class="footer-image fade-in">
+			<div class="footer-image">
 				<div class="footer-container">
 					<div class="footer-column">
-						<h2>SLUŽBY</h2>
+						<h2>
+							<a href="/nase-sluzby" class="price-list-link"
+								>NAŠE SLUŽBY</a
+							>
+						</h2>
 						<ul>
 							<li>
 								<a href="/nase-sluzby#car-service"
@@ -566,9 +570,18 @@
 						<h2>
 							<a href="/cenik" class="price-list-link">CENÍK</a>
 						</h2>
+						<h2>
+							<a href="/nahradni-dily" class="price-list-link"
+								>NÁHRADNÍ DÍLY</a
+							>
+						</h2>
 					</div>
 					<div class="footer-column">
-						<h2>KONTAKT</h2>
+						<h2>
+							<a href="/#section-four" class="price-list-link"
+								>KONTAKT</a
+							>
+						</h2>
 						<h3>Telefon</h3>
 						<p>
 							<a

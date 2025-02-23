@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_admin import Admin
 from dotenv import load_dotenv
+from cloudinary.utils import cloudinary_url  # Importujeme cloudinary_url pro context processor
 
 # Inicializace rozšíření
 db = SQLAlchemy()
@@ -42,8 +43,8 @@ def create_app():
     from app.admin_routes import admin_bp
 
     app.register_blueprint(auth_bp)    # Routy pro autentizaci budou dostupné pod /auth/...
-    app.register_blueprint(main_bp)    # Hlavní stránky pod /
-    app.register_blueprint(admin_bp)   # Administrace pod /admin/...
+    app.register_blueprint(main_bp)      # Hlavní stránky pod /
+    app.register_blueprint(admin_bp)     # Administrace pod /admin/...
 
     # Import modelů, aby se při vytváření tabulek načetly definice z models.py
     from . import models
@@ -51,5 +52,10 @@ def create_app():
     # Vytvoření tabulek v databázi (pokud ještě neexistují)
     with app.app_context():
         db.create_all()
+
+    # Kontextový processor, který zpřístupní funkci cloudinary_url ve šablonách
+    @app.context_processor
+    def inject_cloudinary_url():
+        return dict(cloudinary_url=cloudinary_url)
 
     return app

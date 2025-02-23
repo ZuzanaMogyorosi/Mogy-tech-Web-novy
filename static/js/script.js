@@ -140,7 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
 				prevEl: slider.querySelector(".swiper-button-prev"),
 			},
 			autoplay: {
-				delay: 4000,
+				delay: 6000,
 				disableOnInteraction: false,
 			},
 			slidesPerView: 1,

@@ -1,24 +1,173 @@
-/* ==================================================================================
-    HEADER 
-   ================================================================================== */
+/* =====================================================================
+    0) max-width:                                               1200px
+   ===================================================================== */
 
+/* ========== HEADER ========== */
 @media (max-width: 1200px) {
-	.header-text {
-		display: none;
-	}
-}
-
-@media (max-width: 1020px) {
 	.navbar {
-		padding: 0 5rem;
+		padding: 0 10%;
 		width: 100%;
 	}
-	.triangle {
-		right: 510px;
+	/* HEADER BETWEEN */
+	.header-between {
+		display: none;
+	}
+	.header-text {
+		font-size: 15px;
+		top: 330px;
+		padding: 0 10%;
+		width: 100%;
+	}
+	/* ========== MONTHLY PROMO ========== */
+	.monthly-promo {
+		width: 80%;
+		margin: 0 auto;
+		padding: 50px 0px;
+	}
+	.monthly-promo-h1 {
+		margin-top: 0px;
+	}
+	/* ========== ABOUT-US ========== */
+	.about-us-wrapper {
+		width: 80%;
+		margin: 0 auto;
+		padding: 50px 0px;
+	}
+	/* ============ PROMO SECTION - IMAGE =========*/
+	.promo-wrapper {
+		width: 80%;
+		margin: 0 auto;
+		padding: 70px 0px;
+	}
+	/* ==========  SECTION CONTACT ========== */
+	.contact-wrapper {
+		width: 80%;
+		margin: 0 auto;
+		padding: 70px 0px;
+	}
+	/* ========== CONTACT FORM - FORMULÁŘ ========== */
+	.contact-form-wrapper {
+		width: 80%;
+		margin: 0 auto;
+		padding: 70px 0px;
+	}
+	.contact-form {
+		flex-direction: column;
+		align-items: center;
+		text-align: center; /* Můžete změnit dle potřeby */
+	}
+	.message {
+		max-width: 100%;
+	}
+	/* ========== FOOTER CONTAINER ========== */
+	.footer-container {
+		width: 80%;
+		margin: 0 auto;
 	}
 }
 
+/* =====================================================================
+	1) max-width:                                               1020px
+   ===================================================================== */
+
+@media (max-width: 1020px) {
+	/* ========== HEADER ========== */
+	/* (Původní styly pro .navbar, pokud byly pro 1020px) */
+	.navbar {
+		padding: 0 80px;
+		width: 100%;
+	}
+	.header-text {
+		font-size: 15px;
+		top: 330px;
+		width: 100%;
+		padding: 0 80px;
+	}
+	/* ========== MONTHLY PROMO ========== */
+	.monthly-promo {
+		padding: 48px 80px;
+		width: 100%;
+		margin: 0 auto;
+	}
+	/* ========== ABOUT-US ========== */
+	.about-us-wrapper {
+		padding: 0 80px;
+		width: 100%;
+	}
+	.section-about-us {
+		padding-top: 70px;
+	}
+	/* ========== PROMO SECTION ========== */
+	.promo-wrapper {
+		padding: 0 80px;
+		width: 100%;
+		display: flex;
+		gap: 15px;
+		flex-wrap: wrap;
+		flex-direction: column;
+		align-items: center;
+	}
+	.promo-card {
+		height: 100px;
+		width: 250px;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 8px;
+		position: relative;
+	}
+	/* ========== CONTACT SECTION ========== */
+	.contact-wrapper {
+		padding: 0 80px;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+	}
+	.contact-logo-wrapper {
+		justify-content: center;
+	}
+	.contact-text {
+		align-items: center;
+	}
+	/* ========== PRICE LIST ========== */
+	.table-wrapper {
+		padding: 0 30px;
+		width: 100%;
+	}
+	/* ========== FOOTER ========== */
+	.footer-container {
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	/* ========== SPARE PARTS ========== */
+
+	.spare-parts-wrapper {
+		flex-direction: column;
+		align-items: center;
+	}
+	.selection-photo,
+	.slider-wrapper {
+		flex: 0 0 auto;
+		max-width: 300px;
+	}
+	.spare-parts-content {
+		width: 100%;
+		padding: 10px;
+	}
+	.swiper-slide {
+		min-height: 180px;
+	}
+	.spare-parts-title {
+		text-align: center;
+	}
+}
+
+/* =====================================================================
+	2) max-width:           									850px
+	 =================================================================== */
 @media (max-width: 850px) {
+	/* ========== HEADER ========== */
 	.navbar .links {
 		display: none;
 	}
@@ -28,59 +177,13 @@
 	.dropdown-menu {
 		display: block;
 	}
-	.triangle {
-		display: none;
-	}
-}
-
-@media (max-width: 576px) {
-	.dropdown-menu {
-		width: unset;
-		left: 2rem;
-	}
-}
-@media (max-width: 599px) {
-	.navbar {
-		padding: 3rem 3rem;
+	.header-text {
+		font-size: 15px;
+		top: 330px;
 		width: 100%;
+		padding: 0 40px;
 	}
-}
-
-/* ==================================================================================
-    HEADER BETWEEN 
-   ================================================================================== */
-
-/* HEADER BETWEEN - max-width: 1200px */
-
-@media (max-width: 1200px) {
-	.header-between {
-		display: none;
-	}
-	.section-about-us {
-		padding-top: 70px;
-	}
-}
-
-/* ==================================================================================
-    MONTHLY PROMO 
-   ================================================================================== */
-
-/* MONTHLY PROMO - max-width: 1200px a max-width: 800px */
-@media (max-width: 1200px) {
-	.monthly-promo {
-		padding: 3rem 10rem;
-		width: 100%;
-		margin: 0 auto;
-	}
-}
-@media (max-width: 1020px) {
-	.monthly-promo {
-		padding: 3rem 5rem;
-		width: 100%;
-	}
-}
-
-@media (max-width: 850px) {
+	/* ========== MONTHLY PROMO ========== */
 	.monthly-promo-images {
 		display: none;
 	}
@@ -88,107 +191,30 @@
 		flex-basis: 100%;
 	}
 }
-@media (max-width: 599px) {
-	.monthly-promo {
-		padding: 3rem 3rem;
-		width: 100%;
-	}
-}
 
-/* ==================================================================================
-    ABOUT-US 
-   ================================================================================== */
-
-/* ABOUT-US - max-width: 599px */
-@media (max-width: 1200px) {
-	.about-us-wrapper {
-		padding: 0 10rem;
-		width: 100%;
-	}
-}
-
-@media (max-width: 1020px) {
-	.about-us-wrapper {
-		padding: 0 5rem;
-		width: 100%;
-	}
-}
-
-@media (max-width: 700px) {
-	.icon-container {
-		display: flex;
-		flex-direction: column;
-	}
-	.icon-wrapper {
-		display: flex;
+/*  =====================================================================
+	3) max-width:                                  	            768px
+    ===================================================================== */
+@media (max-width: 768px) {
+	/* Např. SPARE PARTS */
+	.spare-parts-wrapper {
 		flex-direction: column;
 		align-items: center;
 	}
-	.icon-text {
-		padding-bottom: 25px;
-		padding-top: 10px;
+	.selection-photo,
+	.slider-wrapper {
+		flex: 0 0 auto;
+		max-width: 300px;
 	}
-	.about-us-wrapper {
-		width: 90%;
-		margin: 0 auto;
-	}
-}
-
-/* ==================================================================================
-    PROMO SECTION 
-   ================================================================================== */
-
-/* PROMO SECTION - max-width: 599px */
-
-@media (max-width: 900px) {
-	.promo-wrapper {
-		padding: 0 5rem;
+	.spare-parts-content {
 		width: 100%;
-		display: flex;
-		gap: 15px;
-		flex-wrap: wrap;
-		flex-direction: column;
-		align-items: center;
+		padding: 10px;
 	}
-	.promo-card {
-		height: 100px;
-		width: 250px;
-		background-repeat: no-repeat;
-		background-size: cover;
-		border-radius: 8px;
-		position: relative;
+	.swiper-slide {
+		min-height: 180px;
 	}
-}
-@media (max-width: 599px) {
-	.promo-wrapper {
-		padding: 0 2rem;
-		width: 100%;
-		display: flex;
-		gap: 15px;
-		flex-wrap: wrap;
-		flex-direction: column;
-		align-items: center;
-	}
-	.promo-card {
-		height: 100px;
-		width: 250px;
-		background-repeat: no-repeat;
-		background-size: cover;
-		border-radius: 8px;
-		position: relative;
-	}
-}
-/* ==================================================================================
-    PROMO SECTION + SERVICES-HTML
-   ================================================================================== */
-
-/* PROMO SECTION SERVICES-HTML - max-width: 720px */
-
-@media (max-width: 720px) {
-	.section-services {
-		margin: 0 auto;
-		width: 100%;
-		padding: 0 3rem;
+	.message {
+		width: auto;
 	}
 	#car-service.service-wrapper,
 	#tire-service.service-wrapper,
@@ -202,29 +228,8 @@
 		flex-wrap: wrap;
 		justify-content: center;
 		margin-bottom: 30px;
-		gap: 15px;
+		gap: 10px;
 	}
-
-	#car-electricity-service .service-photo {
-		background-position: 50% 25%;
-	}
-
-	#technical-control-service .service-photo {
-		background-position: 50% 0%;
-	}
-
-	#welding .service-photo {
-		background-position: 50% 70%;
-	}
-
-	.service-header {
-		justify-content: center;
-	}
-
-	.service-content {
-		text-align: center;
-	}
-
 	#car-service .service-photo,
 	#tire-service .service-photo,
 	#car-electricity-service .service-photo,
@@ -239,80 +244,78 @@
 	}
 }
 
-/* ==================================================================================
-    CONTACT SECTION 
-   ================================================================================== */
-
-/* CONTACT SECTION - max-width: 599px */
-
+/*  =====================================================================
+	4) max-width:                                                 599px
+	===================================================================== */
 @media (max-width: 599px) {
-	.contact-wrapper {
-		padding: 0 2rem;
+	/* ========== HEADER ========== */
+	.navbar {
+		padding: 48px 48px;
 		width: 100%;
 	}
-
+	.dropdown-menu {
+		width: unset;
+		left: 32px;
+	}
+	/* ========== MONTHLY PROMO ========== */
+	.monthly-promo {
+		padding: 70px 32px;
+		width: 100%;
+	}
+	/* ========== PROMO SECTION ========== */
+	.promo-wrapper {
+		padding: 0 32px;
+		width: 100%;
+		gap: 15px;
+	}
+	.promo-card {
+		height: 100px;
+		width: 250px;
+	}
+	/* ========== ABOUT-US ========== */
+	.about-us-wrapper {
+		padding: 0 32px;
+		width: 100%;
+	}
+	.section-about-us {
+		padding-top: 70px;
+	}
+	.icon-container {
+		flex-direction: column;
+	}
+	/* ========== CONTACT SECTION ========== */
+	.contact-wrapper {
+		padding: 0 32px;
+		width: 100%;
+	}
 	.contact-text {
 		flex-basis: 100%;
 		align-items: center;
 	}
-
 	.contact-logo-wrapper {
 		justify-content: center;
 	}
-}
-
-/* CONTACT SECTION MAP - max-width: 759px */
-
-@media (max-width: 1040px) {
-	.contact-wrapper {
-		padding: 0 5rem;
-		width: 100%;
-		display: flex;
-		flex-direction: column;
-		text-align: center;
-	}
-	.contact-logo-wrapper {
-		justify-content: center;
-	}
-	.contact-text {
-		align-items: center;
-	}
-}
-
-/* ==================================================================================
-    PRICE LIST.HTML 
-   ================================================================================== */
-
-/* PRICE LIST.HTML - max-width: 599px */
-
-@media (max-width: 599px) {
+	/* ========== PRICE LIST ========== */
 	.table-wrapper {
-		padding: 0 3rem;
+		padding: 0 20px;
 		width: 100%;
 	}
-}
 
-/* ==================================================================================
-    FOOTER
-   ================================================================================== */
-
-/* FOOTER - max-width: 900px */
-
-@media (max-width: 900px) {
 	.footer-container {
-		flex-direction: column;
+		width: 95%;
+		margin: 0 auto;
 	}
+	/* Další styly pro 599px... */
 }
 
-/* ==================================================================================
-    TOP CIRCLE 
-   ================================================================================== */
-
-/*  TOP CIRCLE - max-width: 400px */
-
+/*  =====================================================================
+	5) max-width:                                               400px
+	===================================================================== */
 @media (max-width: 400px) {
+	/* ========== TOP CIRCLE ========== */
 	.top-circle {
 		bottom: 20px;
 		right: 60px;
 	}
+	/* Další styly pro 400px lze přidat */
 }

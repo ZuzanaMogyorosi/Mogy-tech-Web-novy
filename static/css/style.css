@@ -9,6 +9,18 @@
 	box-sizing: border-box;
 }
 
+/* Základní nastavení písma pro celé tělo stránky */
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+/* Všechny H1 nadpisy */
+h1 {
+	text-align: center;
+	color: var(--orange);
+	padding: 20px 0px 0px 0px;
+}
+
 /* Kořenové proměnné */
 :root {
 	--text-black: #000000;
@@ -16,7 +28,7 @@
 	--header-right-top: #ec531c;
 	--header-right-text: #ffffff;
 	--orange: #ec531c;
-	--white-text: #cecece;
+	--white-text: #e6e6e6;
 	--h1-text-white: #fbf9f9;
 	--background-right-header: #cecece;
 	--about-us-background: #ffffff;
@@ -31,18 +43,6 @@
 	--form-green: #008000;
 	--footer-bottom-background: #17212b;
 	--clear-white-button: #ffffff;
-}
-
-/* Základní nastavení písma pro celé tělo stránky */
-body {
-	font-family: "Roboto", sans-serif;
-}
-
-/* Všechny H1 nadpisy */
-h1 {
-	text-align: center;
-	color: var(--orange);
-	padding: 0px 0px 30px 0px;
 }
 
 /* ==================================================================================
@@ -89,8 +89,8 @@ header {
 }
 
 .navbar {
-	padding: 0 10rem;
 	width: 100%;
+	padding: 0 15%;
 	height: 60px;
 	margin: 0 auto;
 	display: flex;
@@ -98,21 +98,20 @@ header {
 	justify-content: space-between;
 }
 .navbar .logo a {
-	font-size: 1.5rem;
+	font-size: 24px;
 	font-weight: bold;
 }
 
 .navbar .links {
 	display: flex;
-	gap: 2rem;
+	gap: 32px;
 }
 
 .navbar .toggle-btn {
 	color: var(--clear-white-button) !important;
-	font-size: 1.5rem;
+	font-size: 24px;
 	cursor: pointer;
 	display: none;
-	z-index: 999;
 }
 
 .logo-white img {
@@ -125,7 +124,7 @@ header {
 	display: none;
 	position: absolute;
 	top: 60px;
-	right: 2rem;
+	right: 32px;
 	height: 0;
 	width: 300px;
 	backdrop-filter: blur(5px);
@@ -137,7 +136,7 @@ header {
 	height: 280px;
 }
 .dropdown-menu li {
-	padding: 1rem;
+	padding: 16px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -145,9 +144,9 @@ header {
 
 .header-text {
 	width: 100%;
+	padding: 0 15%;
 	margin: 0 auto;
 	position: absolute;
-	padding: 0 10rem;
 	top: 220px;
 	right: 50%;
 	transform: translateX(50%);
@@ -164,7 +163,7 @@ header {
 .header-between {
 	margin: 0 auto;
 	width: 100%;
-	padding: 0 10rem;
+	padding: 0 15%;
 	position: absolute;
 	top: 320px;
 	z-index: 2;
@@ -259,10 +258,14 @@ header {
 .monthly-promo {
 	width: 70%;
 	margin: 0 auto;
-	padding-top: 190px;
+	padding: 70px 0px;
+}
+.monthly-promo-h1 {
+	margin-top: 130px;
 }
 
 .monthly-promo-wrapper {
+	margin: 40px 0 0 0;
 	display: flex;
 	background-color: #15324c;
 	background-image: url("data:image/svg+xml,%3Csvg width='6' height='6' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23606970' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E");
@@ -386,14 +389,14 @@ header {
 }
 
 .section-about-us {
-	padding-top: 70px;
-	padding-bottom: 70px;
+	padding: 40px 0;
 	background-color: var(--about-us-background);
 }
 
 .about-us-wrapper {
 	width: 70%;
 	margin: 0 auto;
+	padding: 70px 0px;
 	display: flex;
 	gap: 60px;
 }
@@ -450,15 +453,16 @@ header {
 
 .section-promo {
 	background-color: var(--dark-blue);
-	padding: 70px 0px;
+	padding: 40px 0px;
 }
 
 .promo-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	padding: 70px 0px;
 	display: flex;
 	flex-wrap: wrap;
 	gap: 30px;
-	width: 70%;
-	margin: 0 auto;
 }
 
 .promo-content {
@@ -541,12 +545,13 @@ header {
 
 .contact-section {
 	background-color: var(--contact-background);
-	padding: 70px 0px;
+	padding: 40px 0px;
 }
 
 .contact-wrapper {
 	width: 70%;
 	margin: 0 auto;
+	padding: 70px 0px;
 	display: flex;
 	gap: 20px;
 	justify-content: space-between;
@@ -596,67 +601,23 @@ header {
 }
 
 /* ==================================================================================
-    SEKCE TŘI - CENÍK (PRICE-LIST)
-   ================================================================================== */
-
-.section-three {
-	padding: 70px 0px;
-	background-color: var(--contact-background);
-}
-
-.section-three h2 {
-	color: var(--orange);
-}
-
-table {
-	margin: auto;
-	width: 100%;
-	border-collapse: collapse;
-}
-
-.table-wrapper {
-	width: 70%;
-	margin: 0 auto;
-}
-
-td,
-th {
-	padding: 6px 10px 6px 0;
-}
-
-td:first-child {
-	text-align: left;
-}
-
-td:last-child {
-	text-align: right;
-}
-
-.table-h2-one {
-	margin: auto;
-	margin-bottom: 20px;
-	margin-top: 20px;
-	width: 100%;
-}
-
-.table-h3 {
-	margin: auto;
-	margin-bottom: 10px;
-	margin-top: 20px;
-}
-
-/* ==================================================================================
     FORMULÁŘ (FORM)
    ================================================================================== */
 
 .contact-form {
-	padding: 70px 0px;
 	background-color: var(--contact-background);
 	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
+	flex-direction: row; /* Změna: row místo column */
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 40px;
 	text-align: center;
+}
+
+.contact-form-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	padding: 70px 0px;
 }
 
 .notifName,
@@ -682,11 +643,13 @@ td:last-child {
 .message {
 	color: var(--text-black);
 	background-color: var(--white-text);
+	border-radius: 10px;
 	outline: none;
 	padding: 10px;
 	margin-bottom: 5px;
-	width: 800px;
+	width: 600px; /* Nebo 100% a max-width: 600px */
 	height: 150px;
+	resize: both; /* Umožní uživateli měnit výšku dle potřeby */
 }
 
 .text-counter {
@@ -694,12 +657,23 @@ td:last-child {
 	color: var(--text-black);
 }
 
-.form button {
+/* Původní styly pro tlačítko (pokud se liší, upravte) */
+.contact-form button {
 	background-color: var(--dark-blue);
 	color: var(--white-text);
 	border: none;
 	padding: 5px 10px;
 	margin-top: 10px;
+	cursor: pointer;
+	border-radius: 4px; /* případně pro vzhled */
+}
+
+/* Nové kontejnery pro sloupce (vlevo: .message-col, vpravo: .form-col) */
+.message-col,
+.form-col {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* střed vodorovně - můžete změnit na flex-start pro zarovnání vlevo */
 }
 
 /* ==================================================================================
@@ -725,6 +699,9 @@ td:last-child {
 	margin: 0 20px;
 	min-width: 200px;
 	text-align: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 .footer-column h2 {
@@ -843,6 +820,57 @@ td:last-child {
 
 .hide {
 	display: none;
+}
+
+/* ==================================================================================
+    PRICELIST.HTML - CENÍK 
+   ================================================================================== */
+
+.section-three {
+	padding: 70px 0px;
+	background-color: var(--contact-background);
+}
+
+.section-three h2 {
+	color: var(--orange);
+}
+
+table {
+	margin: auto;
+	width: 100%;
+	border-collapse: collapse;
+}
+
+.table-wrapper {
+	width: 70%;
+	margin: 0 auto;
+	padding: 70px 0px;
+}
+
+td,
+th {
+	padding: 6px 10px 6px 0;
+}
+
+td:first-child {
+	text-align: left;
+}
+
+td:last-child {
+	text-align: right;
+}
+
+.table-h2-one {
+	margin: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+	width: 100%;
+}
+
+.table-h3 {
+	margin: auto;
+	margin-bottom: 10px;
+	margin-top: 20px;
 }
 
 /* ==================================================================================

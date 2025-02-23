@@ -188,36 +188,38 @@
 			</section>
 			<!-- SECTION SPARE PARTS ---------------------------------------------------->
 			<section class="section-spare-parts">
-				<h1 class="spare-parts-title">Náhradní díly</h1>
+				<h1 class="spare-parts-h1">Náhradní díly</h1>
 				<div class="spare-parts-container">
 					{% for part in spare_parts %}
-					<div>
-						<h1>{{ part.name }}</h1>
-					</div>
-					<div class="spare-parts-wrapper">
-						<div class="selection-photo">
-							<!-- Swiper slider -->
-							<div class="swiper spare-parts-slider">
-								<div class="swiper-wrapper">
-									{% for image in part.images %}
-									<div class="swiper-slide">
-										<img
-											src="{{ url_for('static', filename='image/Spare-parts/' + image) }}"
-											alt="{{ part.name }}"
-										/>
+					<div class="spare-part">
+						<h2 class="spare-parts-title">{{ part.name }}</h2>
+						<div class="spare-parts-wrapper">
+							<div class="selection-photo">
+								<!-- Obal slideru s fixní/max šířkou -->
+								<div class="slider-wrapper">
+									<div class="swiper spare-parts-slider">
+										<div class="swiper-wrapper">
+											{% for image in part.images %}
+											<div class="swiper-slide">
+												<img
+													src="{{ image }}"
+													alt="{{ part.name }}"
+												/>
+											</div>
+											{% endfor %}
+										</div>
+										<!-- Navigační šipky -->
+										<div class="swiper-button-next"></div>
+										<div class="swiper-button-prev"></div>
 									</div>
-									{% endfor %}
 								</div>
-								<!-- Navigační šipky -->
-								<div class="swiper-button-next"></div>
-								<div class="swiper-button-prev"></div>
 							</div>
-						</div>
-						<div class="spare-parts-content">
-							<p class="spare-parts-list">
-								{{ part.description }}
-							</p>
-							<span class="price">{{ part.price }} Kč</span>
+							<div class="spare-parts-content">
+								<p class="spare-parts-list">
+									{{ part.description }}
+								</p>
+								<span class="price">{{ part.price }} Kč</span>
+							</div>
 						</div>
 					</div>
 					{% endfor %}
