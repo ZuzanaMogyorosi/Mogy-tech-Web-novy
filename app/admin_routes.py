@@ -7,7 +7,7 @@ import os
 from flask import Blueprint
 from flask_admin.contrib.sqla import ModelView
 try:
-    from flask_admin.contrib.sqla.inline import InlineModelAdmin
+    from flask_admin.contrib.sqla import InlineModelAdmin
 except ImportError:
     from flask_admin.model import InlineFormAdmin as InlineModelAdmin
 from flask_admin.form import FileUploadField

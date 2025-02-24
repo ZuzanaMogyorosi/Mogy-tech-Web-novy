@@ -64,6 +64,14 @@
 		width: 80%;
 		margin: 0 auto;
 	}
+	/* ========== SPARE PARTS ========== */
+	.section-spare-parts {
+		width: 80% !important;
+	}
+	/* ========== PRICE LIST ========== */
+	.table-wrapper {
+		width: 80%;
+	}
 }
 
 /* =====================================================================
@@ -297,15 +305,16 @@
 	}
 	/* ========== PRICE LIST ========== */
 	.table-wrapper {
-		padding: 0 20px;
-		width: 100%;
+		width: 90%;
 	}
 
 	.footer-container {
 		width: 95%;
 		margin: 0 auto;
 	}
-	/* Další styly pro 599px... */
+	.section-spare-parts {
+		width: 90% !important;
+	}
 }
 
 /*  =====================================================================
