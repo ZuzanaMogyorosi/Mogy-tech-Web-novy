@@ -1,0 +1,12 @@
+{
+	"editor.tokenColorCustomizations": {
+		"textMateRules": [
+			{
+				"scope": "string.quoted.docstring",
+				"settings": {
+					"foreground": "#d0593b" // zelená
+				}
+			}
+		]
+	}
+}

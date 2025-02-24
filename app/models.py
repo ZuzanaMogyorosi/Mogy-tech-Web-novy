@@ -1,15 +1,24 @@
-from flask_login import UserMixin
-from app import db
-from cloudinary.utils import cloudinary_url
+"""
+Definice modelů pro databázi.
+"""
 
+from flask_login import UserMixin
+from cloudinary.utils import cloudinary_url
+from app import db
 
 class User(UserMixin, db.Model):
+    """
+    Model pro uživatele.
+    """
     __tablename__ = 'user'
     id = db.Column(db.Integer, primary_key=True)
     username = db.Column(db.String(64), unique=True, nullable=False)
     password = db.Column(db.String(128), nullable=False)  # V produkci by se ukládal hash
 
 class Cenik(db.Model):
+    """
+    Model pro ceník služeb.
+    """
     __tablename__ = 'cenik'
     id = db.Column(db.Integer, primary_key=True)
     kategorie = db.Column(db.String(255))
@@ -17,6 +26,9 @@ class Cenik(db.Model):
     cena = db.Column(db.String(50))
 
 class MonthlyPromo(db.Model):
+    """
+    Model pro měsíční promo akce.
+    """
     __tablename__ = 'monthly_promo'
     id = db.Column(db.Integer, primary_key=True)
     mesic = db.Column(db.String(50))
@@ -27,8 +39,10 @@ class MonthlyPromo(db.Model):
     address = db.Column(db.Text)
     image = db.Column(db.String(255))
 
-
 class SparePartImage(db.Model):
+    """
+    Model pro obrázky náhradních dílů.
+    """
     __tablename__ = 'spare_part_images'
     id = db.Column(db.Integer, primary_key=True)
     spare_part_id = db.Column(db.Integer, db.ForeignKey('spare_parts.id'))
@@ -36,6 +50,9 @@ class SparePartImage(db.Model):
     spare_part = db.relationship("SparePart", back_populates="images_rel")
 
 class SparePart(db.Model):
+    """
+    Model pro náhradní díly.
+    """
     __tablename__ = 'spare_parts'
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
@@ -45,6 +62,9 @@ class SparePart(db.Model):
     
     @property
     def images(self):
+        """
+        Vrací seznam URL obrázků náhradních dílů.
+        """
         urls = []
         for img in self.images_rel:
             url, _ = cloudinary_url(img.public_id, fetch_format="auto")

@@ -1,7 +1,9 @@
-# ADMINISTRACE
-# Tento soubor obsahuje konfiguraci Flask-Admin, který je používán pro správu dat v aplikaci.
-# Pokud využíváš Flask-Admin, můžeš jej konfigurovat tady. 
-# Někdo ho dává přímo do __init__.py, ale takto to máš oddělené. Můžeš sem dát i ručně psané routy pro administraci.
+""" 
+    ADMINISTRACE
+        Tento soubor obsahuje konfiguraci Flask-Admin, který je používán pro správu dat v aplikaci.
+        Pokud využíváš Flask-Admin, můžeš jej konfigurovat tady. 
+        Někdo ho dává přímo do __init__.py, ale takto to mám oddělené. Můžeš sem dát i ručně psané routy pro administraci.
+"""
 
 import os
 from flask import Blueprint
@@ -11,6 +13,8 @@ try:
 except ImportError:
     from flask_admin.model import InlineFormAdmin as InlineModelAdmin
 from flask_admin.form import FileUploadField
+from flask_admin.menu import MenuLink
+from flask_login import current_user
 from markupsafe import Markup
 
 import cloudinary
@@ -19,11 +23,10 @@ from cloudinary.utils import cloudinary_url
 
 from app import admin, db
 from app.models import User, Cenik, MonthlyPromo, SparePart, SparePartImage
-from flask_login import current_user
 
 admin_bp = Blueprint('admin_bp', __name__, url_prefix='/admin')
 
-# Konfigurace Cloudinary – načítáme hodnoty z .env
+# Konfigurace Cloudinary
 cloudinary.config(
     cloud_name=os.getenv('CLOUDINARY_CLOUD_NAME'),
     api_key=os.getenv('CLOUDINARY_API_KEY'),
@@ -32,9 +35,9 @@ cloudinary.config(
 )
 
 def upload_image_to_cloudinary(file):
-    """
-    Nahraje soubor na Cloudinary a vrátí jeho public_id.
-    Pokud objekt file nemá atribut 'stream', vrací None.
+    """ 
+        Nahraje soubor na Cloudinary a vrátí jeho public_id.
+        Pokud objekt file nemá atribut 'stream', vrací None.
     """
     if not hasattr(file, 'stream'):
         return None
@@ -49,13 +52,15 @@ def upload_image_to_cloudinary(file):
     result = cloudinary.uploader.upload(file)
     return result.get("public_id")
 
-# Inline admin pro model SparePartImage
+# Inline administrace pro model SparePartImage
 class SparePartImageInline(InlineModelAdmin):
-    # Umožníme nahrání jednoho obrázku (pro každý řádek)
+    """
+    Inline administrace pro model SparePartImage.
+    """
     form_extra_fields = {
         'public_id': FileUploadField('Nahrát obrázek', base_path='/tmp')
     }
-    
+
     def on_model_change(self, form, model, is_created):
         file = form.data.get('public_id')
         if file and hasattr(file, 'stream'):
@@ -63,24 +68,34 @@ class SparePartImageInline(InlineModelAdmin):
             if uploaded_id:
                 model.public_id = uploaded_id
 
+    @staticmethod
     def _image_preview(view, context, model, name):
         if model.public_id:
-            preview_url, _ = cloudinary_url(model.public_id, width=100, height=100, crop="fill", fetch_format="auto")
+            preview_url, _ = cloudinary_url(
+                model.public_id,
+                width=100,
+                height=100,
+                crop="fill",
+                fetch_format="auto"
+            )
             return Markup(f'<img src="{preview_url}" width="100">')
         return ""
-    
     column_formatters = {'public_id': _image_preview}
 
 # ModelView pro SparePart s inline modelem pro obrázky
 class SparePartAdmin(ModelView):
-    # Inicializujeme inline model s modelem SparePartImage (bez db.session)
+    """
+    Administrace pro model SparePart.
+    """
     inline_models = (SparePartImageInline(SparePartImage),)
-    
     def is_accessible(self):
         return current_user.is_authenticated
 
 # Základní ModelView pro ostatní modely
 class AdminModelView(ModelView):
+    """
+    Základní administrace pro modely.
+    """
     def is_accessible(self):
         return current_user.is_authenticated
 
@@ -89,3 +104,9 @@ admin.add_view(AdminModelView(User, db.session))
 admin.add_view(AdminModelView(Cenik, db.session))
 admin.add_view(AdminModelView(MonthlyPromo, db.session))
 admin.add_view(SparePartAdmin(SparePart, db.session))
+
+# Přidání vlastních odkazů do menu:
+# - Home: směřuje na hlavní stránku (index.html)
+# - Logout: odkazuje na autentizační endpoint pro odhlášení (definován v auth.py)
+admin.add_link(MenuLink(name='Home', url='/'))          # případně lze použít url_for('main.home')
+admin.add_link(MenuLink(name='Logout', url='/auth/logout'))

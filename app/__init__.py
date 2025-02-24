@@ -1,18 +1,33 @@
+"""
+Tento soubor obsahuje inicializaci aplikace Flask, včetně konfigurace databáze,
+registrace blueprintů a nastavení rozšíření.
+"""
+
 import os
+from typing import Dict, Callable
+
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_admin import Admin
 from dotenv import load_dotenv
-from cloudinary.utils import cloudinary_url  # Importujeme cloudinary_url pro context processor
+from cloudinary.utils import cloudinary_url
 
 # Inicializace rozšíření
 db = SQLAlchemy()
 login_manager = LoginManager()
 admin = Admin(name="Admin Panel", template_mode="bootstrap4")
 
-def create_app():
-    # Načtení proměnných z .env souboru
+def create_app() -> Flask:
+    """
+    Vytvoří a nakonfiguruje instanci aplikace Flask.
+
+    Načte proměnné prostředí z .env souboru, nastaví konfiguraci aplikace,
+    inicializuje rozšíření a registruje blueprinty.
+
+    Returns:
+        Flask: Instance aplikace Flask.
+    """
     load_dotenv()
 
     # Vytvoření instance Flask aplikace s nastavením cest ke statickým souborům a šablonám
@@ -43,11 +58,8 @@ def create_app():
     from app.admin_routes import admin_bp
 
     app.register_blueprint(auth_bp)    # Routy pro autentizaci budou dostupné pod /auth/...
-    app.register_blueprint(main_bp)      # Hlavní stránky pod /
-    app.register_blueprint(admin_bp)     # Administrace pod /admin/...
-
-    # Import modelů, aby se při vytváření tabulek načetly definice z models.py
-    from . import models
+    app.register_blueprint(main_bp)    # Hlavní stránky pod /
+    app.register_blueprint(admin_bp)   # Administrace pod /admin/...
 
     # Vytvoření tabulek v databázi (pokud ještě neexistují)
     with app.app_context():
@@ -55,7 +67,7 @@ def create_app():
 
     # Kontextový processor, který zpřístupní funkci cloudinary_url ve šablonách
     @app.context_processor
-    def inject_cloudinary_url():
-        return dict(cloudinary_url=cloudinary_url)
+    def inject_cloudinary_url() -> dict:
+        return {"cloudinary_url": cloudinary_url}
 
     return app
