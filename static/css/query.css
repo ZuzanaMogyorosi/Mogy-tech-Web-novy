@@ -185,12 +185,6 @@
 	.dropdown-menu {
 		display: block;
 	}
-	.header-text {
-		font-size: 15px;
-		top: 330px;
-		width: 100%;
-		padding: 0 40px;
-	}
 	/* ========== MONTHLY PROMO ========== */
 	.monthly-promo-images {
 		display: none;
@@ -265,6 +259,12 @@
 		width: unset;
 		left: 32px;
 	}
+	.header-text {
+		font-size: 15px;
+		top: 330px;
+		width: 100%;
+		padding: 0 32px;
+	}
 	/* ========== MONTHLY PROMO ========== */
 	.monthly-promo {
 		padding: 70px 32px;
@@ -326,5 +326,4 @@
 		bottom: 20px;
 		right: 60px;
 	}
-	/* Další styly pro 400px lze přidat */
 }

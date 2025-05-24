@@ -1,6 +1,12 @@
 """
-Definice modelů pro databázi.
+Tento soubor definuje strukturu databáze (tzv. modely).
+
+Každý model představuje jednu tabulku – např. uživatele, ceník, měsíční akce nebo náhradní díly.
+
+Modely jsou propojené s databází pomocí SQLAlchemy, 
+a obrázky náhradních dílů jsou propojeny s Cloudinary (uložené v cloudu).
 """
+
 
 from flask_login import UserMixin
 from cloudinary.utils import cloudinary_url

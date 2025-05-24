@@ -2,7 +2,7 @@
     GLOBAL RESET A KOŘENOVÉ PROMĚNNÉ
    ================================================================================== */
 
-/* Globální reset */
+/* Globální styly */
 * {
 	margin: 0;
 	padding: 0;
@@ -63,7 +63,7 @@ h1 {
 			rgba(21, 50, 76, 0.65) 80%,
 			rgba(21, 50, 76, 0) 100%
 		),
-		url(/static/image/Header-image/autoOpacne.png);
+		url(/static/image/Header-image/bmwsupersport.png);
 	background-position: 50% 50%;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -756,6 +756,14 @@ header {
 .social-icons img {
 	width: 20px;
 	height: 20px;
+}
+/* Změna obrázku při najetí */
+.social-icons a:hover .fb {
+	content: url("/static/image/Icons/fb-icon.png");
+}
+
+.social-icons a:hover .ig {
+	content: url("/static/image/Icons/insta-icon.png");
 }
 
 /* Spodní proužek ve footeru */

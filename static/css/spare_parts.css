@@ -1,25 +1,33 @@
-/* Celkový styling sekce */
+/* =====================================================================
+    0) Celkový styling sekce
+   ===================================================================== */
 .section-spare-parts {
 	width: 70%;
 	margin: 0 auto;
 	padding-bottom: 20px;
 }
 
-/* Hlavní nadpis sekce */
+/* =====================================================================
+    1) Hlavní nadpis sekce
+   ===================================================================== */
 .spare-parts-h1 {
 	text-align: center;
 	font-size: 2em;
 	margin-bottom: 20px;
 }
 
-/* Kontejner pro jednotlivé díly */
+/* =====================================================================
+    2) Kontejner pro jednotlivé díly
+   ===================================================================== */
 .spare-parts-container {
 	display: flex;
 	flex-direction: column;
 	gap: 40px;
 }
 
-/* Každý díl */
+/* =====================================================================
+    3) Každý díl
+   ===================================================================== */
 .spare-part {
 	border-radius: 20px;
 	border: 1px solid #ddd;
@@ -28,14 +36,18 @@
 	margin-bottom: 20px;
 }
 
-/* Nadpis dílu */
+/* =====================================================================
+    4) Nadpis dílu
+   ===================================================================== */
 .spare-parts-title {
 	color: black;
 	font-size: 20px;
 	margin: 0 0 20px;
 }
 
-/* Hlavní wrapper pro obsah dílu */
+/* =====================================================================
+    5) Hlavní wrapper pro obsah dílu
+   ===================================================================== */
 .spare-parts-wrapper {
 	display: flex;
 	flex-wrap: wrap;
@@ -43,51 +55,54 @@
 	align-items: center;
 }
 
-/* Slider – levá část */
+/* =====================================================================
+    6) Slider – levá část
+   ===================================================================== */
 .selection-photo {
 	flex: 0 0 220px;
 }
 
-/* Wrapper pro slider pro omezení šířky */
+/* =====================================================================
+    7) Wrapper pro slider pro omezení šířky
+   ===================================================================== */
 .slider-wrapper {
 	max-width: 220px;
 	position: relative;
 	margin: 0 auto;
 }
 
-/* Samotný Swiper kontejner */
+/* =====================================================================
+    8) Samotný Swiper kontejner
+   ===================================================================== */
 .spare-parts-slider {
 	width: 100%;
 	position: relative;
 }
 
-/* Každý slide – flex pro zarovnání obsahu na střed */
+/* =====================================================================
+    9) Každý slide – flex pro zarovnání obsahu na střed
+   ===================================================================== */
 .swiper-slide {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	min-height: 200px; /* aby měl slide dost místa pro vertikální střed */
+	min-height: 200px;
 	position: relative;
 }
 
-/* Obrázky ve slideru */
+/* =====================================================================
+    10) Obrázky ve slideru
+   ===================================================================== */
 .swiper-slide img {
-	/* Aby se menší obrázky nevlepily k rohu, ale zůstaly uprostřed */
 	display: block;
-	/* Pokud chcete zachovat poměr stran a zabránit deformaci, 
-	ale vyplnit co nejvíc slide, můžete použít: 
-	width: 100%; height: 100%; object-fit: contain; 
-	   Zde ale ponecháme jen max-width. */
 	max-width: 100%;
 	max-height: 100%;
-	/* Případně pokud chcete omezit velikost:
-	max-width: 200px; 
-	max-height: 200px; 
-	*/
 	object-fit: contain;
 }
 
-/* Pravá část – popis a cena */
+/* =====================================================================
+    11) Pravá část – popis a cena
+   ===================================================================== */
 .spare-parts-content {
 	flex: 1;
 	display: flex;
@@ -95,11 +110,17 @@
 	justify-content: center;
 }
 
+/* =====================================================================
+    12) Výpis vlastností dílu
+   ===================================================================== */
 .spare-parts-list {
 	font-size: 1em;
 	margin-bottom: 10px;
 }
 
+/* =====================================================================
+    13) Cena dílu
+   ===================================================================== */
 .price {
 	font-size: 1.2em;
 	font-weight: bold;
@@ -107,7 +128,9 @@
 	margin-top: 10px;
 }
 
-/* Šipky – zarovnání na střed vertikálně */
+/* =====================================================================
+    14) Šipky – zarovnání na střed vertikálně
+   ===================================================================== */
 .swiper-button-next,
 .swiper-button-prev {
 	color: #333;

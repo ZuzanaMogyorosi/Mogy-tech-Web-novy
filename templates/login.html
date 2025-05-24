@@ -128,32 +128,26 @@
 						action="{{ url_for('auth.login') }}"
 						class="login-form"
 					>
+						{{ form.hidden_tag() }}
+
 						<div class="login-form-group">
 							<label for="username">Uživatelské jméno:</label>
-							<input
-								type="text"
-								id="username"
-								name="username"
-								class="login-input"
-								required
-							/>
+							{{ form.username(class="login-input", id="username")
+							}}
 						</div>
+
 						<div class="login-form-group">
 							<label for="password">Heslo:</label>
-							<input
-								type="password"
-								id="password"
-								name="password"
-								class="login-input"
-								required
-							/>
+							{{ form.password(class="login-input", id="password")
+							}}
 						</div>
-						<button type="submit" class="login-button">
-							Přihlásit se
-						</button>
+
+						{{ form.submit(class="login-button") }}
 					</form>
-					{% with messages = get_flashed_messages() %} {% if messages
-					%}
+
+					{% with messages =
+					get_flashed_messages(category_filter=['login']) %} {% if
+					messages %}
 					<ul class="flashes">
 						{% for message in messages %}
 						<li>{{ message }}</li>
@@ -261,6 +255,7 @@
 								target="_blank"
 							>
 								<img
+									class="social-icon fb"
 									src="/static/image/Icons/fb-icon-white.png"
 									alt="Facebook"
 								/>
@@ -270,6 +265,7 @@
 								target="_blank"
 							>
 								<img
+									class="social-icon ig"
 									src="/static/image/Icons/instagram-icon-white.png"
 									alt="Instagram"
 								/>

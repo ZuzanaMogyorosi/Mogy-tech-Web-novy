@@ -1,9 +1,12 @@
-""" 
-    ADMINISTRACE
-        Tento soubor obsahuje konfiguraci Flask-Admin, který je používán pro správu dat v aplikaci.
-        Pokud využíváš Flask-Admin, můžeš jej konfigurovat tady. 
-        Někdo ho dává přímo do __init__.py, ale takto to mám oddělené. Můžeš sem dát i ručně psané routy pro administraci.
 """
+Tento soubor se stará o administraci (Flask-Admin).
+
+Obsahuje připojení databázových modelů do administračního rozhraní, 
+možnost nahrávání obrázků přes Cloudinary a přidávání vlastních tlačítek do menu (např. logout).
+
+Blueprint 'admin_bp' je zde připravený pro případ, že budu chtít přidat i vlastní routy (např. stránku /admin/nastaveni).
+"""
+
 
 import os
 from flask import Blueprint

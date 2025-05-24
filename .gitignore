@@ -5,3 +5,10 @@ venv/
 __pycache__/
 *.pyc
 
+# ingorovat soubor env
+
+.env
+
+# Ignorovat soubor s nastavením editoru
+
+settings.json

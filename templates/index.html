@@ -259,22 +259,14 @@
 					<div>
 						<article class="what-we-do-text fade-in">
 							<p>
-								V našem servisu se zaměřujeme na poskytování
-								služeb přizpůsobených specifickým potřebám
-								každého zákazníka. Díky našim dlouholetým
-								zkušenostem rychle a efektivně řešíme jakýkoli
-								problém s vaším vozidlem, ať už jde o  rutinní
-								údržbu nebo složitější opravy. Jsme vždy
-								připraveni poskytnout odborné poradenství
-								a navrhnout nejlepší řešení pro vaše vozidlo.
-								Dlouhodobé vztahy s našimi zákazníky jsou pro
-								nás prioritou, proto klademe důraz na
-								transparentní komunikaci a férové jednání. Naším
-								cílem je opravit vaše vozidlo tak, abyste se na
-								cestě cítili bezpečně a pohodlně. Díky naší
-								důslednosti a závazku k vysokým standardům se
-								můžete spolehnout, že vaše vozidlo bude vždy
-								v nejlepších rukou.
+								Jsme rodinný autoservis se zaměřením na BMW a
+								MINI. Díky dlouholeté praxi rychle odhalíme
+								příčinu závady a zvolíme nejúčinnější postup
+								opravy. Ke každému vozu – ať je jakékoli značky
+								– přistupujeme individuálně, vše otevřeně
+								vysvětlíme a doporučíme řešení s ohledem na
+								kvalitu i cenu. Cílem je, abyste odjížděli v
+								autě, na které se můžete spolehnout.
 							</p>
 						</article>
 						<div class="icon-container">
@@ -477,37 +469,28 @@
 			<section id="contackt-form">
 				<h1>Kontaktujte nás s poptávkou</h1>
 				<div class="contact-form-wrapper">
-					<form action="/submit" method="POST" class="contact-form">
+					<form
+						method="POST"
+						action="{{ url_for('main.home') }}"
+						class="contact-form"
+					>
+						<!-- TADY SE UKRÝVÁ CSRF OCHRANA! Flask-WTF sem vloží input s tokenem -->
+						{{ form.hidden_tag() }}
 						<!-- Levý sloupec: Zpráva + counter -->
 						<div class="message-col">
-							<textarea
-								name="message"
-								class="message"
-								placeholder="Zpráva"
-								required
-							></textarea>
+							{{ form.message(class="message",
+							placeholder="Zpráva", required=True) }}
 							<p class="text-counter">0</p>
 						</div>
 						<!-- Pravý sloupec: Jméno, Email, Tlačítko -->
 						<div class="form-col">
-							<input
-								type="text"
-								name="fullName"
-								class="fullName"
-								placeholder="Jméno a příjmení"
-								required
-							/>
+							{{ form.full_name(class="fullName",
+							placeholder="Jméno a příjmení", required=True) }}
 							<p class="notifName">Vyplňte jméno a příjmení</p>
-							<input
-								type="email"
-								name="email"
-								class="email"
-								placeholder="Email"
-								pattern=".*\.[a-z]{2,}$"
-								required
-							/>
+							{{ form.email(class="email", placeholder="Email",
+							required=True) }}
 							<p class="notifEmail">Vyplňte email</p>
-							<button type="submit">Odeslat</button>
+							{{ form.submit(class="submit-btn") }}
 						</div>
 					</form>
 				</div>
@@ -612,17 +595,23 @@
 							<a
 								href="https://www.facebook.com/kamilcustomer"
 								target="_blank"
-								><img
+							>
+								<img
+									class="social-icon fb"
 									src="/static/image/Icons/fb-icon-white.png"
 									alt="Facebook"
-							/></a>
+								/>
+							</a>
 							<a
 								href="https://www.instagram.com/autoservis_mogy_tech/"
 								target="_blank"
-								><img
+							>
+								<img
+									class="social-icon ig"
 									src="/static/image/Icons/instagram-icon-white.png"
 									alt="Instagram"
-							/></a>
+								/>
+							</a>
 						</div>
 					</div>
 				</div>
