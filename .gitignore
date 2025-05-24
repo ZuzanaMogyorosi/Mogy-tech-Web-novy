@@ -1,0 +1,7 @@
+# Ignorování prostředí
+venv/
+__pycache__/
+*.pyc
+
+# Ignorování citlivých souborů
+.env
